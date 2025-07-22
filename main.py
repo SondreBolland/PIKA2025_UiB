@@ -20,7 +20,7 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 from grading_utils import grade_answers, count_correct, group_answers
 
 
-root = "/uio"
+root = "/uib"
 app = Flask(__name__, static_url_path = root + "/static")
 app.config['APPLICATION_ROOT'] = root
 app.wsgi_app = ProxyFix(app.wsgi_app, x_prefix=1)
