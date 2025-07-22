@@ -1,0 +1,15 @@
+{
+    "loops1": {
+        "caption": "Hva skrives ut når denne koden kjøres?",
+        "type": "options",
+        "options": [
+            "Utskrift:",
+            "Jeg vet ikke"
+        ],
+        "keys": [
+            "integer:",
+            "-"
+        ],
+        "correct": "integer:10"
+    }
+}

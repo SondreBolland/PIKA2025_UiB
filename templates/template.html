@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}PIKA 2025{% endblock %}</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css" />
+		{% block head %}{% endblock %}
+	</head>
+
+	<body>
+		{% block body %}
+		{% endblock %}
+	</body>
+</html>

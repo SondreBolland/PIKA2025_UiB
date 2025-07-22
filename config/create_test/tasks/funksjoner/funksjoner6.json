@@ -1,0 +1,28 @@
+{
+    "functions6a": {
+        "caption": "Hva er verdien til variabelen <strong>a</strong> når den skrives ut på linje 8?",
+        "type": "options",
+        "options": [
+            "Dens verdi er:",
+            "Jeg vet ikke"
+        ],
+        "keys": [
+            "integer:",
+            "-"
+        ],
+        "correct": "integer:10"
+    },
+    "functions6b": {
+        "caption": "Hva er verdien til variabelen <strong>b</strong> når den skrives ut på linje 9?",
+        "type": "options",
+        "options": [
+            "Dens verdi er:",
+            "Jeg vet ikke"
+        ],
+        "keys": [
+            "integer:",
+            "-"
+        ],
+        "correct": "integer:10"
+    }
+}

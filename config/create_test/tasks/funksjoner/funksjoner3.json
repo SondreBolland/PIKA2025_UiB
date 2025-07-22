@@ -1,0 +1,23 @@
+{
+    "functions3": {
+        "caption": "Hvilket av følgende utsagn beskriver best hva som skjer når funksjonen <code>add(8, 5, 12)</code> kjøres?",
+        "type": "options",
+        "options": [
+            "Verdien til max = 13",
+            "Etter at makssummen er skrevet ut, vil add returnere max",
+            "Ingenting vil noen gang returneres fra denne funksjonen",
+            "Ingenting vil noen gang skrives ut fra denne funksjonen",
+            "Det vil oppstå en feil fordi man prøver å skrive ut etter at max er returnert",
+            "Jeg vet ikke"
+        ],
+        "keys": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "-"
+        ],
+        "correct": "iv"
+    }
+}

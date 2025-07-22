@@ -1,0 +1,29 @@
+{
+	"conditionals3": {
+        "caption": "Hva skrives ut når denne koden kjøres?",
+		"type": "options",
+		"options": [
+			"1",
+			"2",
+			"3",
+			"1 og 2",
+			"1 og 3",
+			"2 og 3",
+			"1, 2 og 3",
+			"Ingenting",
+			"Jeg vet ikke"
+		],
+		"keys": [
+			"1",
+			"2",
+			"3",
+			"1and2",
+			"1and3",
+			"2and3",
+			"1and2and3",
+			"nothing",
+			"-"
+		],
+		"correct": "2"
+	}
+}

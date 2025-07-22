@@ -1,0 +1,21 @@
+{
+	"conditionals2": {
+        "caption": "Hva skrives ut når denne koden kjøres?",
+		"type": "options",
+		"options": [
+			"1",
+			"2",
+			"1 og 2",
+			"Ingenting",
+			"Jeg vet ikke"
+		],
+		"keys": [
+			"1",
+			"2",
+			"1and2",
+			"nothing",
+			"-"
+		],
+		"correct": "2"
+	}
+}

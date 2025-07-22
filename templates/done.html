@@ -1,0 +1,77 @@
+{% extends "template.html" %}
+{% block head %}
+{% if score.code_js %}
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='shCoreDefault.css') }}" >
+<script src="{{ url_for('static', filename='shCore.js') }}"></script>
+{% for c in score.code_js %}
+<script src="{{ url_for('static', filename=c) }}"></script>
+{% endfor %}
+<script>SyntaxHighlighter.all();</script>
+{% endif %}
+
+<script src="{{ url_for('static', filename='nav.js') }}"></script>
+{% endblock %}
+{% block body %}
+
+<h1>{{ data.title }}</h1>
+
+<p>
+	{{ data.thanks | safe }}
+</p>
+
+{% if score %}
+{% if score.type == "score" %}
+<p>
+	{{ score.text }}
+</p>
+{% elif score.type == "summary" %}
+<p>
+	{{ score.text }}
+</p>
+
+<input id="navPrev" class="nav_button" style="float: left;" type="button" value="{{ data.results.prev }}" onClick="javascript:navPrev();" />
+<input id="navNext" class="nav_button" style="float: right;" type="button" value="{{ data.results.next }}" onClick="javascript:navNext();" />
+
+<br clear="both" />
+
+{% for page in score.pages %}
+<div class="ans_page" name="card">
+	<h3>{{ page.title }} ({{ loop.index }}/{{ score.pages|length }})</h3>
+
+	{% if page.code %}
+	<pre class="brush: {{ page.code_brush }}">{{ page.code }}</pre>
+	{% endif %}
+
+	<table>
+		<tr>
+			<th>{{ data.results.question }}</th>
+			{% if score.show_correct %}
+			<th>{{ data.results.correct_ans }}</th>
+			{% endif %}
+			<th>{{ data.results.your_ans }}</th>
+		</tr>
+		{% for caption, ans, ref, correct in page.content %}
+		<tr>
+			<td>{{ caption | safe }}</td>
+			{% if score.show_correct %}
+			<td>{{ ref }}</td>
+			{% endif %}
+			<td class="{% if correct %}correct{% else %}incorrect{% endif %}">{{ ans }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+{% endfor %}
+
+{% endif %}
+{% endif %}
+
+<p>
+	{{ data.questions_text }}
+	{% for i in data.owners %}
+	{% if loop.index0 > 0 %} {{ data.questions_or }} {% endif %}
+	<a href="mailto:{{ i.email }}">{{ i.name }}</a>
+	{% endfor %}
+</p>
+
+{% endblock %}

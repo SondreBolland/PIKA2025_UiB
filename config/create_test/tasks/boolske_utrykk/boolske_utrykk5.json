@@ -1,0 +1,82 @@
+{
+    "5booltext": {
+        "caption": "",
+        "type": "plain-text",
+                "text": "For hver av de følgende boolske utrykkene, velg hvilken boolsk verdi (<code>True</code>/<code>False</code>) utrykket evaluerer til, gitt variabelene:<br></br><b>a = 2</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>b = 3</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>c = 5</b>"
+    },
+    "bool5a": {
+        "caption": "<code>(a + b) == c</code>",
+        "type": "options",
+        "options": [
+            "False",
+            "True",
+            "Jeg vet ikke"
+        ],
+        "keys": [
+            "false",
+            "true",
+            "-"
+        ],
+        "correct": "true"
+    },
+    "bool5b": {
+        "caption": "<code>((a * 2) < c) and ((b + a) > 5)</code>",
+        "type": "options",
+        "options": [
+            "False",
+            "True",
+            "Jeg vet ikke"
+        ],
+        "keys": [
+            "false",
+            "true",
+            "-"
+        ],
+        "correct": "false"
+    },
+    "bool5c": {
+        "caption": "<code>not ((c - a) < b)</code>",
+        "type": "options",
+        "options": [
+            "False",
+            "True",
+            "Jeg vet ikke"
+        ],
+        "keys": [
+            "false",
+            "true",
+            "-"
+        ],
+        "correct": "true"
+    },
+    "bool5d": {
+        "caption": "<code>((a + b) == c) or ((b * 2) == c)</code>",
+        "type": "options",
+        "options": [
+            "False",
+            "True",
+            "Jeg vet ikke"
+        ],
+        "keys": [
+            "false",
+            "true",
+            "-"
+        ],
+        "correct": "true"
+    },
+    "bool5e": {
+        "caption": "<code>((a + b) < c) and not ((b - a) < 2)</code>",
+        "type": "options",
+        "options": [
+            "False",
+            "True",
+            "Jeg vet ikke"
+        ],
+        "keys": [
+            "false",
+            "true",
+            "-"
+        ],
+        "correct": "false"
+    }
+}

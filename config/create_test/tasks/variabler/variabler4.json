@@ -1,0 +1,41 @@
+{
+    "variables4a": {
+        "caption": "Hva er verdien til variabelen <strong>a</strong> etter linje 6 er utført?",
+        "type": "options",
+        "options": [
+            "Dens verdi er:",
+            "Jeg vet ikke"
+        ],
+        "keys": [
+            "integer:",
+            "-"
+        ],
+        "correct": "integer:20"
+    },
+    "variables4b": {
+        "caption": "Hva er verdien til variabelen <strong>b</strong> etter linje 6 er utført?",
+        "type": "options",
+        "options": [
+            "Dens verdi er:",
+            "Jeg vet ikke"
+        ],
+        "keys": [
+            "integer:",
+            "-"
+        ],
+        "correct": "integer:30"
+    },
+    "variables4c": {
+        "caption": "Hva er verdien til variabelen <strong>c</strong> etter linje 6 er utført?",
+        "type": "options",
+        "options": [
+            "Dens verdi er:",
+            "Jeg vet ikke"
+        ],
+        "keys": [
+            "integer:",
+            "-"
+        ],
+        "correct": "integer:30"
+    }
+}

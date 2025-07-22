@@ -1,0 +1,24 @@
+{% extends "template.html" %}
+{% block body %}
+
+<h1>Manage groups</h1>
+
+{% for survey, g in groups %}
+
+<h3>{{ survey }}</h3>
+
+<p>
+	Send e-mail links to all members of the group:
+
+	{% for group in g %}
+	<form action="#" method="post" style="display: inline;">
+		<input type="hidden" name="survey" value="{{ ids[survey] }}" />
+		<input type="hidden" name="group" value="{{ group }}" />
+		<input type="submit" value="{{ group }}" class="send_button" />
+	</form>
+	{% endfor %}
+</p>
+
+{% endfor %}
+
+{% endblock %}

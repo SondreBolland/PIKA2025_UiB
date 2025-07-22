@@ -1,0 +1,2008 @@
+{
+  "name": "pika_nor",
+  "title": "Kan du allerede litt programmering?",
+  "open": true,
+  "email_subject": "PIKA: Forhåndskunnskap i informatikk",
+  "email_intro": "...",
+  "introduction": "<b>PIKA: Prior Informatics Knowledge Assessment 2025</b><br><br>Denne testen hjelper oss å forstå hvilke programmeringskunnskaper studentene har med seg når de begynner i høyere utdanning. Ved å finne ut hva du allerede kan, kan vi forbedre undervisningen av programmering!<br><br>Denne testen er <b>ikke</b> en vurdering av deg og vil ha <b>ingen betydning</b> for karakteren din. Deltakelse er helt frivillig.<br><br>Emnet <b>Innføring i programmering</b> som du snart skal begynne på, starter med det grunnleggende uansett hvordan du presterer på denne testen :)",
+  "thanks": "Takk for at du svarte! Vil du se resultater fra tidligere år? Ta en titt her: <a href=\"https://pika-test.org/\">pika-test.org</a>.",
+  "next": "Neste",
+  "pick_one": "Velg ett alternativ",
+  "textplaceholder": "Ditt svar",
+  "valueplaceholder": "Verdi",
+  "results": {
+    "type": "summary",
+    "text": "Du svarte riktig på {score} av {max} spørsmål!",
+    "show_correct": false,
+    "question": "Spørsmål",
+    "your_ans": "Ditt svar",
+    "correct_ans": "Riktig svar",
+    "next": "Neste",
+    "prev": "Forrige"
+  },
+  "questions_text": "Hvis du har spørsmål, vennligst kontakt ",
+  "questions_or": " eller ",
+  "owners": [
+    {
+      "name": "Sondre Sæther Bolland",
+      "email": "sondre.bolland@uib.no"
+    }
+  ],
+  "value_types": {
+    "integer": {
+      "key": 0,
+      "name": "Integer (int)",
+      "validate": "[0-9]+",
+      "remove": " ",
+      "format": "{}",
+      "hint": "Example: 100"
+    },
+    "bool": {
+      "key": 1,
+      "name": "Boolean (bool)",
+      "validate": "(true|false)",
+      "remove": " ",
+      "format": "{}",
+      "hint": "Example: true or false"
+    },
+    "float": {
+      "key": 2,
+      "name": "Float (float)",
+      "validate": "[0-9]+.?[0-9]*",
+      "remove": " ",
+      "format": "{}",
+      "hint": "Example: 1.0"
+    },
+    "list": {
+      "key": 3,
+      "name": "List (list)",
+      "validate": " *\\[? *([0-9]+( *, *[0-9]+)*)? *\\]? *",
+      "remove": "[ \\[\\]]",
+      "format": "[{}]",
+      "hint": "Example: 1, 2 or [1, 2]"
+    },
+    "string": {
+      "key": 4,
+      "name": "String (str)",
+      "validate": "(\".*\"|'.*'|[^\"']*)",
+      "remove": "(^\"|^'|\"$|'$)",
+      "format": "\"{}\"",
+      "hint": "Example: \"abc\", 'abc' or abc"
+    },
+    "error": {
+      "key": 5,
+      "name": "An error will occur when running",
+      "validate": "",
+      "remove": null,
+      "format": "Runtime error",
+      "hint": "No value is needed"
+    },
+    "unknown": {
+      "key": 6,
+      "name": "I don't know",
+      "validate": "",
+      "remove": null,
+      "skipped": true,
+      "format": "I don't know",
+      "hint": "No value is needed"
+    }
+  },
+  "errors": {
+    "options": "Choose one option",
+    "number": "Write a number",
+    "text": "The field cannot be empty",
+    "no_value": "Choose a type for the value",
+    "value": {
+      "array": "Fill in a list av integers seperated by commas. For example: 1, 2, 3",
+      "integer": "Fill in an integer",
+      "string": "Fill in a string, either with or without quotation marks.",
+      "dict": "Fill in a dictionary in the given format.",
+      "null": "Fältet måste vara tomt eftersom du har valt None som typ",
+      "unknown": "The field must be empty as you have chosen \"I don't know\"",
+      "nothing": "Fältet måste vara tomt eftersom du har valt att variabeln inte finns"
+    }
+  },
+  "questions": {
+    "consent": {
+      "caption": "",
+      "type": "plain-text",
+      "text": "Ved å delta i denne testen samtykker du i at svarene dine kan brukes til forskningsformål med mål om å bedre forstå hvordan studenter nærmer seg programmeringsoppgaver. Din deltakelse er helt frivillig.<br><br>Vennligst merk følgende:<ul><li>Dine individuelle svar vil aldri bli publisert eller delt.</li><li>Alle resultater vil kun bli rapportert i aggregert form – som gjennomsnitt, trender eller sammenligninger mellom grupper.</li><li>Formålet med denne forskningen er å forbedre programmeringsundervisningen ved å analysere hvordan ulike grupper av studenter presterer på ulike typer oppgaver.</li></ul>"
+    },
+    "consent_answer": {
+      "caption": "<b>Samtykker du til at svarene dine brukes i denne forskningen?</b><br><small>Hvis ikke, vennligst lukk dette vinduet.</small>",
+      "type": "options",
+      "options": [
+        "Jeg samtykker"
+      ],
+      "keys": [
+        "consent"
+      ]
+    },
+    "guidelines": {
+      "caption": "",
+      "type": "plain-text",
+      "text": "Denne testen skal gjennomføres uten bruk av hjelpemidler. Kommunikasjon med andre og bruk av eksterne ressurser som internett, bøker, utskrifter osv. er ikke tillatt.<br></br>De eneste tillatte hjelpemidlene er penn og papir."
+    },
+    "own_work_declaration": {
+      "caption": "<b>Godtar du å følge retningslinjene?</b>",
+      "type": "options",
+      "options": [
+        "Jeg godtar"
+      ],
+      "keys": [
+        "agree"
+      ]
+    },
+    "id": {
+      "caption": "Dette er brukernavnet du har fått for din universitetsbruker. Du bruker den til å logge inn på MittUiB og e-posten din.<br><br>ID'en begynner med 3-4 bokstaver etterfulgt av 3-4 tall. F.eks.:<br><br><b>abcd1234</b> eller <b>abc123</b><br><br>Hvis du ikke vet hva ID'en din er så kan du gå på INF100-emnesiden (MittUiB) og søke opp navnet ditt under \"Personer\".",
+      "type": "text"
+    },
+    "institution": {
+      "caption": "Ved hvilken institusjon (universitet/høyskole) studerer du?",
+      "type": "options-list",
+      "options": [
+        "Universitetet i Bergen (UiB)",
+        "Universitetet i Oslo (UiO)",
+        "Norges teknisk-naturvitenskapelige universitet (NTNU)",
+        "Norges miljø- og biovitenskapelige universitet (NMBU)",
+        "Høgskolen i Østfold (HIOF)",
+        "Høgskulen på Vestlandet (HVL)",
+        "Universitetet i Stavanger (UiS)",
+        "Høyskolen Kristiania"
+      ],
+      "keys": [
+        "UiB",
+        "UiO",
+        "NTNU",
+        "NMBU",
+        "HIOF",
+        "HVL",
+        "UiS",
+        "Kristiania"
+      ]
+    },
+    "study_field": {
+      "caption": "Hva studerer du?",
+      "type": "options-list",
+      "options": [
+        "Informatikk / Datavitenskap / Informasjonsvitenskap",
+        "Matematikk / Statistikk",
+        "Fysikk",
+        "Kjemi",
+        "Biologi / Livsvitenskap / Biomedisin",
+        "Ingeniørfag (f.eks. elektro, maskin, bygg)",
+        "Medisin / Helsefag",
+        "Geofysikk",
+        "Geovitenskap",
+        "Miljøvitenskap",
+        "Økonomi",
+        "Juss",
+        "Annet"
+      ],
+      "keys": [
+        "inf",
+        "math",
+        "phys",
+        "chem",
+        "bio",
+        "eng",
+        "med",
+        "geophys",
+        "geo",
+        "env",
+        "econ",
+        "law",
+        "other"
+      ]
+    },
+    "gender": {
+      "caption": "Hvilket kjønn identifiserer du deg som?",
+      "type": "text"
+    },
+    "graduate_year": {
+      "caption": "Hvilket år fullførte du videregående?",
+      "type": "options-list",
+      "options": [
+        "2024",
+        "2023",
+        "2022",
+        "2021",
+        "2020",
+        "2019",
+        "2018",
+        "2017",
+        "2016",
+        "2015",
+        "2014",
+        "2013",
+        "2012",
+        "2010",
+        "2009",
+        "2008",
+        "2007",
+        "2006",
+        "2005",
+        "2004",
+        "2003",
+        "2002",
+        "2001",
+        "2000",
+        "Tidligere"
+      ],
+      "keys": [
+        "2024",
+        "2023",
+        "2022",
+        "2021",
+        "2020",
+        "2019",
+        "2018",
+        "2017",
+        "2016",
+        "2015",
+        "2014",
+        "2013",
+        "2012",
+        "2010",
+        "2009",
+        "2008",
+        "2007",
+        "2006",
+        "2005",
+        "2004",
+        "2003",
+        "2002",
+        "2001",
+        "2000",
+        "earlier"
+      ]
+    },
+    "math_courses": {
+      "caption": "Hvilke matematikkfag fullførte du på videregående skole?<br></br><small>Velg alle fagene du fullførte, ikke bare det mest avanserte.</small>",
+      "type": "options-multi",
+      "options": [
+        "1P",
+        "1T",
+        "2P",
+        "S1",
+        "S2",
+        "R1",
+        "R2",
+        "Annet"
+      ],
+      "keys": [
+        "1P",
+        "1T",
+        "2P",
+        "S1",
+        "S2",
+        "R1",
+        "R2",
+        "Other"
+      ]
+    },
+    "stem_courses": {
+      "caption": "Hvilke realfag fullførte du på videregående?",
+      "type": "options-multi",
+      "options": [
+        "Biologi 1",
+        "Biologi 2",
+        "Fysikk 1",
+        "Fysikk 2",
+        "Kjemi 1",
+        "Kjemi 2",
+        "Geofag 1",
+        "Geofag 2",
+        "Teknologi og forskningslære 1",
+        "Teknologi og forskningslære 2",
+        "Ingen av disse fagene"
+      ],
+      "keys": [
+        "bio1",
+        "bio2",
+        "2P",
+        "fys1",
+        "fys2",
+        "kjemi1",
+        "kjemi2",
+        "geo1",
+        "geo2",
+        "tof1",
+        "tof2",
+        "none"
+      ]
+    },
+    "prog_courses": {
+      "caption": "Fullførte du noen av disse programmeringsfagene?",
+      "type": "options-multi",
+      "options": [
+        "Informasjonsteknologi 1",
+        "Informasjonsteknologi 2",
+        "Programmering og Modellering X",
+        "Ingen av disse fagene"
+      ],
+      "keys": [
+        "it1",
+        "it2",
+        "pmx",
+        "none"
+      ]
+    },
+    "other_experience": {
+      "caption": "Har du erfaring med programmering utenfor skolen?",
+      "text": "Blokkbasert programmering inkluderer Scratch, Blockly, osv.<br/>Tekstbasert programmering inkluderer Python, Java, C, C#, C++, osv.",
+      "type": "options-multi",
+      "options": [
+        "Jeg har ingen erfaring utenfor skolen",
+        "Minst 30 timers erfaring med tekstbasert programmering",
+        "Minst 50 timers erfaring med tekstbasert programmering",
+        "Minst 100 timers erfaring med tekstbasert programmering",
+        "Mer enn 120 timers erfaring med tekstbasert programmering",
+        "Minst 30 timers erfaring med blokkbasert programmering",
+        "Minst 50 timers erfaring med blokkbasert programmering",
+        "Minst 100 timers erfaring med blokkbasert programmering",
+        "Mer enn 120 timers erfaring med blokkbasert programmering",
+        "Annen erfaring, vennligst spesifiser:"
+      ],
+      "keys": [
+        "none",
+        "text30",
+        "text50",
+        "text100",
+        "text120",
+        "block30",
+        "block50",
+        "block100",
+        "block120",
+        "other:"
+      ]
+    },
+    "uni_course": {
+      "caption": "Har du deltatt i eller fullført et programmerings-/informatikkurs i høyere utdanning før denne testen?<br></br><small>Dette inkluderer ikke kurset du tar nå.</small>",
+      "type": "options",
+      "options": [
+        "Ja, et kurs som ga 10 studiepoeng eller mer",
+        "Ja, et kurs som ga mellom 5 og 10 studiepoeng",
+        "Ja, et kurs som ga 5 studiepoeng eller mindre",
+        "Ja, men kurset ga ingen studiepoeng",
+        "Nei"
+      ],
+      "keys": [
+        "10ECTS",
+        "7.5ECTS",
+        "5ECTS",
+        "0ECTS",
+        "no"
+      ]
+    },
+    "instructions": {
+      "caption": "",
+      "type": "plain-text",
+      "text": "Neste del inneholder programmeringsoppgaver i programmeringsspråket <b>Python</b>.<br/><br/>Hvis du tror du vet svaret, eller har en anelse om hva det kan være, ønsker vi at du svarer.<br></br><h3><b>Viktig</b></h3>Hvis du ikke aner hva svaret kan være, velg <b>\"Jeg vet ikke\"</b>. Husk at denne testen ikke er ment å evaluere deg personlig. Den er laget for å kartlegge generell programmeringskunnskap blant nye studenter, så ikke prøv deg på gjetninger. Velg heller <b>\"Jeg vet ikke\"</b>."
+    },
+    "back_button": {
+      "caption": "Viktig",
+      "type": "plain-text",
+      "text": "Denne testen har ingen tilbake-knapp. Du vil derfor ikke kunne gå tilbake til et tidligere spørsmål for å endre svaret etter å ha klikket på <b>Neste</b>."
+    },
+    "expressions1": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:5"
+    },
+    "expressions2": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:24"
+    },
+    "expressions3": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:20"
+    },
+    "expressions4": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:2"
+    },
+    "expressions5": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "str:",
+        "-"
+      ],
+      "correct": "str:123123"
+    },
+    "expressions6": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "str:",
+        "-"
+      ],
+      "correct": "str:111"
+    },
+    "variables1a": {
+      "caption": "Hva er verdien til variabelen <strong>a</strong> etter linje 4 er utført?",
+      "type": "options",
+      "options": [
+        "Dens verdi er:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:20"
+    },
+    "variables1b": {
+      "caption": "Hva er verdien til variabelen <strong>b</strong> etter linje 4 er utført?",
+      "type": "options",
+      "options": [
+        "Dens verdi er:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:20"
+    },
+    "variables2a": {
+      "caption": "Hva er verdien til variabelen <strong>a</strong> etter linje 4 er utført?",
+      "type": "options",
+      "options": [
+        "Dens verdi er:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:10"
+    },
+    "variables2b": {
+      "caption": "Hva er verdien til variabelen <strong>b</strong> etter linje 4 er utført?",
+      "type": "options",
+      "options": [
+        "Dens verdi er:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:10"
+    },
+    "variables3a": {
+      "caption": "Hva er verdien til variabelen <strong>a</strong> etter linje 5 er utført?",
+      "type": "options",
+      "options": [
+        "Dens verdi er:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:20"
+    },
+    "variables3b": {
+      "caption": "Hva er verdien til variabelen <strong>b</strong> etter linje 5 er utført?",
+      "type": "options",
+      "options": [
+        "Dens verdi er:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:20"
+    },
+    "variables4a": {
+      "caption": "Hva er verdien til variabelen <strong>a</strong> etter linje 6 er utført?",
+      "type": "options",
+      "options": [
+        "Dens verdi er:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:20"
+    },
+    "variables4b": {
+      "caption": "Hva er verdien til variabelen <strong>b</strong> etter linje 6 er utført?",
+      "type": "options",
+      "options": [
+        "Dens verdi er:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:30"
+    },
+    "variables4c": {
+      "caption": "Hva er verdien til variabelen <strong>c</strong> etter linje 6 er utført?",
+      "type": "options",
+      "options": [
+        "Dens verdi er:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:30"
+    },
+    "variables5a": {
+      "caption": "Hva er verdien til variabelen <strong>a</strong> etter linje 7 er utført?",
+      "type": "options",
+      "options": [
+        "Dens verdi er:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:30"
+    },
+    "variables5b": {
+      "caption": "Hva er verdien til variabelen <strong>b</strong> etter linje 7 er utført?",
+      "type": "options",
+      "options": [
+        "Dens verdi er:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:30"
+    },
+    "variables5c": {
+      "caption": "Hva er verdien til variabelen <strong>c</strong> etter linje 7 er utført?",
+      "type": "options",
+      "options": [
+        "Dens verdi er:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:30"
+    },
+    "1booltext": {
+      "caption": "",
+      "type": "plain-text",
+      "text": "For hver av de følgende boolske utrykkene, velg hvilken boolsk verdi (<code>True</code>/<code>False</code>) utrykket evaluerer til:"
+    },
+    "bool1a": {
+      "caption": "<code>2 > 7</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "false"
+    },
+    "bool1b": {
+      "caption": "<code>(10 + 3) >= 13</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "true"
+    },
+    "bool1c": {
+      "caption": "<code>(10 * 2) < 9</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "false"
+    },
+    "bool1d": {
+      "caption": "<code>(1 + 3) < (2 * 3)</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "true"
+    },
+    "2booltext": {
+      "caption": "",
+      "type": "plain-text",
+      "text": "For hver av de følgende boolske utrykkene, velg hvilken boolsk verdi (<code>True</code>/<code>False</code>) utrykket evaluerer til:"
+    },
+    "bool2a": {
+      "caption": "<code>100 != 100</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "false"
+    },
+    "bool2b": {
+      "caption": "<code>(3 < 7) and (7 < 9)</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "true"
+    },
+    "bool2c": {
+      "caption": "<code>(5 < 7) and (4 > 5)</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "false"
+    },
+    "bool2d": {
+      "caption": "<code>(3 < 7) or (7 < 9)</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "true"
+    },
+    "bool2e": {
+      "caption": "<code>(5 < 7) or (4 > 5)</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "true"
+    },
+    "bool2f": {
+      "caption": "<code>not (100 > 100)</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "true"
+    },
+    "bool2g": {
+      "caption": "<code>not (100 != 100)</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "true"
+    },
+    "3booltext": {
+      "caption": "",
+      "type": "plain-text",
+      "text": "For hver av de følgende boolske utrykkene, velg hvilken boolsk verdi (<code>True</code>/<code>False</code>) utrykket evaluerer til:"
+    },
+    "bool3a": {
+      "caption": "<code>True or False</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "true"
+    },
+    "bool3b": {
+      "caption": "<code>True and False</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "false"
+    },
+    "bool3c": {
+      "caption": "<code>True == True</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "true"
+    },
+    "bool3d": {
+      "caption": "<code>not (True != True)</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "true"
+    },
+    "4booltext": {
+      "caption": "",
+      "type": "plain-text",
+      "text": "For hver av de følgende boolske utrykkene, velg hvilken boolsk verdi (<code>True</code>/<code>False</code>) utrykket evaluerer til, gitt variabelen <b>n = 5</b>:"
+    },
+    "bool4a": {
+      "caption": "<code>n < 10</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "true"
+    },
+    "bool4b": {
+      "caption": "<code>100 == n</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "false"
+    },
+    "bool4c": {
+      "caption": "<code>(n < 7) and (4 > n)</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "false"
+    },
+    "bool4d": {
+      "caption": "<code>n <= 5</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "true"
+    },
+    "bool4e": {
+      "caption": "<code>not (n < 10)</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "false"
+    },
+    "5booltext": {
+      "caption": "",
+      "type": "plain-text",
+      "text": "For hver av de følgende boolske utrykkene, velg hvilken boolsk verdi (<code>True</code>/<code>False</code>) utrykket evaluerer til, gitt variabelene:<br></br><b>a = 2</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>b = 3</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>c = 5</b>"
+    },
+    "bool5a": {
+      "caption": "<code>(a + b) == c</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "true"
+    },
+    "bool5b": {
+      "caption": "<code>((a * 2) < c) and ((b + a) > 5)</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "false"
+    },
+    "bool5c": {
+      "caption": "<code>not ((c - a) < b)</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "true"
+    },
+    "bool5d": {
+      "caption": "<code>((a + b) == c) or ((b * 2) == c)</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "true"
+    },
+    "bool5e": {
+      "caption": "<code>((a + b) < c) and not ((b - a) < 2)</code>",
+      "type": "options",
+      "options": [
+        "False",
+        "True",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "false",
+        "true",
+        "-"
+      ],
+      "correct": "false"
+    },
+    "bool6": {
+      "caption": "Anta at <code>a</code>, <code>b</code> og <code>c</code> er variabler av typen <code>int</code> (heltall). Vurder de følgende tre uttrykkene:<br></br> I. &nbsp;&nbsp;<code>(a == b) and (a == c) and (b == c)</code><br></br> II. &nbsp;<code>(a == b) or (a == c) or (b == c)</code><br></br> III. <code>((a - b) * (a - c) * (b - c)) == 0</code><br></br><br></br> Hvilke(t) av uttrykkene ovenfor er alltid sann(e) dersom minst to av <code>a</code>, <code>b</code> og <code>c</code> er like?",
+      "type": "options",
+      "options": [
+        "Bare I",
+        "Bare II",
+        "Bare III",
+        "I og II",
+        "II og III",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "i",
+        "ii",
+        "iii",
+        "iandii",
+        "iiandiii",
+        "-"
+      ],
+      "correct": "iiandiii"
+    },
+    "lists1": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:20"
+    },
+    "lists2": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:4"
+    },
+    "lists3": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:80"
+    },
+    "lists4": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:25"
+    },
+    "lists5a": {
+      "caption": "Hvilke verdier har listen <code>a</code> etter linje 4 er utført?<br></br><small>Skriv hver verdi separert med et komma, slik: <code>1, 2, 3</code></small>",
+      "type": "options",
+      "options": [
+        "Verdiene i liste a:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "list:",
+        "-"
+      ],
+      "correct": "list:10,20,30"
+    },
+    "lists5b": {
+      "caption": "Hvilke verdier har listen <code>b</code> etter linje 4 er utført?<br></br><small>Skriv hver verdi separert med et komma, slik: <code>1, 2, 3</code></small>",
+      "type": "options",
+      "options": [
+        "Verdiene i liste b:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "list:",
+        "-"
+      ],
+      "correct": "list:5,35,25"
+    },
+    "lists6a": {
+      "caption": "Hvilke verdier har listen <code>a</code> etter linje 6 er utført?<br></br><small>Skriv hver verdi separert med et komma, slik: <code>1, 2, 3</code></small>",
+      "type": "options",
+      "options": [
+        "Verdiene i liste a:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "list:",
+        "-"
+      ],
+      "correct": "list:10,20,35"
+    },
+    "lists6b": {
+      "caption": "Hvilke verdier har listen <code>b</code> etter linje 6 er utført?<br></br><small>Skriv hver verdi separert med et komma, slik: <code>1, 2, 3</code></small>",
+      "type": "options",
+      "options": [
+        "Verdiene i liste b:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "list:",
+        "-"
+      ],
+      "correct": "list:20,15,25"
+    },
+    "conditionals1": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "1",
+        "Ingenting",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "1",
+        "nothing",
+        "-"
+      ],
+      "correct": "nothing"
+    },
+    "conditionals2": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "1",
+        "2",
+        "1 og 2",
+        "Ingenting",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "1",
+        "2",
+        "1and2",
+        "nothing",
+        "-"
+      ],
+      "correct": "2"
+    },
+    "conditionals3": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "1 og 2",
+        "1 og 3",
+        "2 og 3",
+        "1, 2 og 3",
+        "Ingenting",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "1",
+        "2",
+        "3",
+        "1and2",
+        "1and3",
+        "2and3",
+        "1and2and3",
+        "nothing",
+        "-"
+      ],
+      "correct": "2"
+    },
+    "conditionals4": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:2"
+    },
+    "conditionals5": {
+      "caption": "Hvilke av de følgende alternativene for <code>MISSING_CODE1</code> og <code>MISSING_CODE2</code> vil skrive ut <code>2</code> og <code>3</code>.<br></br><b>I.</b><br><code>MISSING_CODE1</code>: <code>x or y</code><br><code>MISSING_CODE2</code>: <code>y and not x</code><br><br><b>II.</b><br><code>MISSING_CODE1</code>: <code>not y</code><br><code>MISSING_CODE2</code>: <code>x or y</code><br><br><b>III.</b><br><code>MISSING_CODE1</code>: <code>x and y</code><br><code>MISSING_CODE2</code>: <code>y and z</code><br><br><b>IV.</b><br><code>MISSING_CODE1</code>: <code>x and not y</code><br><code>MISSING_CODE2</code>: <code>not z and x</code>",
+      "type": "options",
+      "options": [
+        "I",
+        "II",
+        "III",
+        "IV",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "i",
+        "ii",
+        "iii",
+        "iv",
+        "-"
+      ],
+      "correct": "ii"
+    },
+    "loops1": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:10"
+    },
+    "loops2": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:100"
+    },
+    "loops3": {
+      "caption": "Hvilket av de følgende utsagnene beskriver best hva som skjer når while-løkken kjøres? Svar nederst på siden.<br></br><strong>I)</strong> Når j er mindre enn 10, skriv ut \"Book i\":<br></br><code>Book 1</code><br></br><code>Book 2</code><br></br>...<br></br><code>Book 9</code><br></br><strong>II)</strong> Når j er mindre enn 10, skriv ut \"Book j\":<br></br><code>Book 0</code><br></br><code>Book 1</code><br></br>...<br></br><code>Book 9</code><br></br><strong>III)</strong> j er alltid lik 0, som er mindre enn 10; så skriv ut \"Book 0\" et uendelig antall ganger:<br></br><code>Book 0</code><br></br><code>Book 0</code><br></br><code>...</code><br></br><strong>IV)</strong> j er alltid lik 0, som er mindre enn 10; så skriv ut \"Book i\" et uendelig antall ganger:<br></br><code>Book 1</code><br></br><code>Book 2</code><br></br>...<br></br><strong>V)</strong> j er lik 0, som er mindre enn 10; så skriv ut:<br></br><code>Book 1</code>",
+      "type": "options",
+      "options": [
+        "I",
+        "II",
+        "III",
+        "IV",
+        "V",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "i",
+        "ii",
+        "iii",
+        "iv",
+        "v",
+        "-"
+      ],
+      "correct": "iv"
+    },
+    "loops4": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "multi_line_text",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:531"
+    },
+    "loops5": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "multi_line_text",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:6421"
+    },
+    "loops6": {
+      "caption": "I hvilket av de følgende tilfellene er det IKKE passende å bruke en for-løkke?",
+      "type": "options",
+      "options": [
+        "Når jeg vil skrive ut alle verdiene i en liste på slutten av programmet.",
+        "Når jeg vil gjenta noe et bestemt antall ganger.",
+        "Når jeg vil telle over et tallintervall.",
+        "Når jeg vil utføre samme operasjon på ulike elementer i en liste.",
+        "Når jeg vil iterere fram til en bestemt betyngelse er oppfylt.",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "i",
+        "ii",
+        "iii",
+        "iv",
+        "v",
+        "-"
+      ],
+      "correct": "v"
+    },
+    "loops7": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:3"
+    },
+    "loops8": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "multi_line_text",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:1112"
+    },
+    "loops9": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:12"
+    },
+    "loops10": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:9"
+    },
+    "loops11": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:9"
+    },
+    "functions1": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:7"
+    },
+    "functions2": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "multi_line_text",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:1212"
+    },
+    "functions3": {
+      "caption": "Hvilket av følgende utsagn beskriver best hva som skjer når funksjonen <code>add(8, 5, 12)</code> kjøres?",
+      "type": "options",
+      "options": [
+        "Verdien til max = 13",
+        "Etter at makssummen er skrevet ut, vil add returnere max",
+        "Ingenting vil noen gang returneres fra denne funksjonen",
+        "Ingenting vil noen gang skrives ut fra denne funksjonen",
+        "Det vil oppstå en feil fordi man prøver å skrive ut etter at max er returnert",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "i",
+        "ii",
+        "iii",
+        "iv",
+        "v",
+        "-"
+      ],
+      "correct": "iv"
+    },
+    "functions4": {
+      "caption": "Vurder følgende metode, <b>between</b>, som er ment å returnere true dersom <code>x</code> er mellom <code>lower</code> og <code>upper</code>, og false ellers.<br></br>Hvilken av følgende kan brukes til å erstatte <code># Missing code</code> slik at <b>between</b> fungerer som ønsket?",
+      "type": "options",
+      "options": [
+        "return (x <= lower) and (x >= upper)",
+        "return (x <= lower) or (x >= upper)",
+        "return (x >= lower) and (x <= upper)",
+        "return (x >= lower) or (x <= upper)",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "i",
+        "ii",
+        "iii",
+        "iv",
+        "-"
+      ],
+      "correct": "iii"
+    },
+    "functions5": {
+      "caption": "Hvilken av følgende kan brukes til å erstatte innholdet i funksjonen <code>calculate</code> slik at den modifiserte versjonen av <code>calculate</code> returnerer det samme resultatet som den opprinnelige versjonen for alle verdier av x?",
+      "type": "options",
+      "options": [
+        "return 3 + x",
+        "return 3 * x",
+        "return 4 + x",
+        "return 4 * x",
+        "return 8 * x",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "i",
+        "ii",
+        "iii",
+        "iv",
+        "v",
+        "-"
+      ],
+      "correct": "v"
+    },
+    "functions6a": {
+      "caption": "Hva er verdien til variabelen <strong>a</strong> når den skrives ut på linje 8?",
+      "type": "options",
+      "options": [
+        "Dens verdi er:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:10"
+    },
+    "functions6b": {
+      "caption": "Hva er verdien til variabelen <strong>b</strong> når den skrives ut på linje 9?",
+      "type": "options",
+      "options": [
+        "Dens verdi er:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:10"
+    },
+    "functions7a": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:7"
+    },
+    "functions7b": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:7"
+    },
+    "functions7c": {
+      "caption": "Hva skrives ut når denne koden kjøres?",
+      "type": "options",
+      "options": [
+        "Utskrift:",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "integer:",
+        "-"
+      ],
+      "correct": "integer:10"
+    },
+    "difficulty": {
+      "caption": "Hva synes du om vanskelighetsgraden på denne testen?",
+      "type": "options",
+      "options": [
+        "Veldig lett",
+        "Lett",
+        "Nøytral",
+        "Vanskelig",
+        "Veldig vanskelig"
+      ],
+      "keys": [
+        "-2",
+        "-1",
+        "0",
+        "1",
+        "2"
+      ]
+    },
+    "comments": {
+      "caption": "Har du noen kommentarer om testen?<br></br>Hvis du synes dette var vanskelig så trenger du ikke å bekymre deg :) Du kommer til å lære alt dette i det kommende semesteret.",
+      "type": "optional_text"
+    }
+  },
+  "pages": [
+    {
+      "title": "Samtykke",
+      "content": [
+        "consent",
+        "consent_answer"
+      ]
+    },
+    {
+      "title": "Rettningslinjer",
+      "content": [
+        "guidelines",
+        "own_work_declaration"
+      ]
+    },
+    {
+      "title": "Hva er din SIS-ID",
+      "content": [
+        "id"
+      ]
+    },
+    {
+      "title": "Hvor studerer du?",
+      "content": [
+        "institution",
+        "study_field"
+      ]
+    },
+    {
+      "title": "Bakgrunn",
+      "content": [
+        "gender",
+        "graduate_year"
+      ]
+    },
+    {
+      "title": "Matematikkbakgrunn",
+      "content": [
+        "math_courses"
+      ]
+    },
+    {
+      "title": "Realfagsbakgrunn",
+      "content": [
+        "stem_courses",
+        "prog_courses",
+        "other_experience",
+        "uni_course"
+      ]
+    },
+    {
+      "title": "Instruksjoner",
+      "content": [
+        "instructions"
+      ]
+    },
+    {
+      "title": "Ingen tilbake-knapp",
+      "content": [
+        "back_button"
+      ]
+    },
+    {
+      "title": "Utrykk 1",
+      "content": [
+        "expressions1"
+      ],
+      "code": "create_test/tasks/utrykk/utrykk1.py"
+    },
+    {
+      "title": "Utrykk 2",
+      "content": [
+        "expressions2"
+      ],
+      "code": "create_test/tasks/utrykk/utrykk2.py"
+    },
+    {
+      "title": "Utrykk 3",
+      "content": [
+        "expressions3"
+      ],
+      "code": "create_test/tasks/utrykk/utrykk3.py"
+    },
+    {
+      "title": "Utrykk 4",
+      "content": [
+        "expressions4"
+      ],
+      "code": "create_test/tasks/utrykk/utrykk4.py"
+    },
+    {
+      "title": "Utrykk 5",
+      "content": [
+        "expressions5"
+      ],
+      "code": "create_test/tasks/utrykk/utrykk5.py"
+    },
+    {
+      "title": "Utrykk 6",
+      "content": [
+        "expressions6"
+      ],
+      "code": "create_test/tasks/utrykk/utrykk6.py"
+    },
+    {
+      "title": "Variabler 1",
+      "content": [
+        "variables1a",
+        "variables1b"
+      ],
+      "code": "create_test/tasks/variabler/variabler1.py"
+    },
+    {
+      "title": "Variabler 2",
+      "content": [
+        "variables2a",
+        "variables2b"
+      ],
+      "code": "create_test/tasks/variabler/variabler2.py"
+    },
+    {
+      "title": "Variabler 3",
+      "content": [
+        "variables3a",
+        "variables3b"
+      ],
+      "code": "create_test/tasks/variabler/variabler3.py"
+    },
+    {
+      "title": "Variabler 4",
+      "content": [
+        "variables4a",
+        "variables4b",
+        "variables4c"
+      ],
+      "code": "create_test/tasks/variabler/variabler4.py"
+    },
+    {
+      "title": "Variabler 5",
+      "content": [
+        "variables5a",
+        "variables5b",
+        "variables5c"
+      ],
+      "code": "create_test/tasks/variabler/variabler5.py"
+    },
+    {
+      "title": "Boolske utrykk 1",
+      "content": [
+        "1booltext",
+        "bool1a",
+        "bool1b",
+        "bool1c",
+        "bool1d"
+      ]
+    },
+    {
+      "title": "Boolske utrykk 2",
+      "content": [
+        "2booltext",
+        "bool2a",
+        "bool2b",
+        "bool2c",
+        "bool2d",
+        "bool2e",
+        "bool2f",
+        "bool2g"
+      ]
+    },
+    {
+      "title": "Boolske utrykk 3",
+      "content": [
+        "3booltext",
+        "bool3a",
+        "bool3b",
+        "bool3c",
+        "bool3d"
+      ]
+    },
+    {
+      "title": "Boolske utrykk 4",
+      "content": [
+        "4booltext",
+        "bool4a",
+        "bool4b",
+        "bool4c",
+        "bool4d",
+        "bool4e"
+      ]
+    },
+    {
+      "title": "Boolske utrykk 5",
+      "content": [
+        "5booltext",
+        "bool5a",
+        "bool5b",
+        "bool5c",
+        "bool5d",
+        "bool5e"
+      ]
+    },
+    {
+      "title": "Boolske utrykk 6",
+      "content": [
+        "bool6"
+      ]
+    },
+    {
+      "title": "Lister 1",
+      "content": [
+        "lists1"
+      ],
+      "code": "create_test/tasks/lister/lister1.py"
+    },
+    {
+      "title": "Lister 2",
+      "content": [
+        "lists2"
+      ],
+      "code": "create_test/tasks/lister/lister2.py"
+    },
+    {
+      "title": "Lister 3",
+      "content": [
+        "lists3"
+      ],
+      "code": "create_test/tasks/lister/lister3.py"
+    },
+    {
+      "title": "Lister 4",
+      "content": [
+        "lists4"
+      ],
+      "code": "create_test/tasks/lister/lister4.py"
+    },
+    {
+      "title": "Lister 5",
+      "content": [
+        "lists5a",
+        "lists5b"
+      ],
+      "code": "create_test/tasks/lister/lister5.py"
+    },
+    {
+      "title": "Lister 6",
+      "content": [
+        "lists6a",
+        "lists6b"
+      ],
+      "code": "create_test/tasks/lister/lister6.py"
+    },
+    {
+      "title": "Betingelser 1",
+      "content": [
+        "conditionals1"
+      ],
+      "code": "create_test/tasks/betingelser/betingelser1.py"
+    },
+    {
+      "title": "Betingelser 2",
+      "content": [
+        "conditionals2"
+      ],
+      "code": "create_test/tasks/betingelser/betingelser2.py"
+    },
+    {
+      "title": "Betingelser 3",
+      "content": [
+        "conditionals3"
+      ],
+      "code": "create_test/tasks/betingelser/betingelser3.py"
+    },
+    {
+      "title": "Betingelser 4",
+      "content": [
+        "conditionals4"
+      ],
+      "code": "create_test/tasks/betingelser/betingelser4.py"
+    },
+    {
+      "title": "Betingelser 5",
+      "content": [
+        "conditionals5"
+      ],
+      "code": "create_test/tasks/betingelser/betingelser5.py"
+    },
+    {
+      "title": "Løkker 1",
+      "content": [
+        "loops1"
+      ],
+      "code": "create_test/tasks/løkker/løkker1.py"
+    },
+    {
+      "title": "Løkker 2",
+      "content": [
+        "loops2"
+      ],
+      "code": "create_test/tasks/løkker/løkker2.py"
+    },
+    {
+      "title": "Løkker 3",
+      "content": [
+        "loops3"
+      ],
+      "code": "create_test/tasks/løkker/løkker3.py"
+    },
+    {
+      "title": "Løkker 4",
+      "content": [
+        "loops4"
+      ],
+      "code": "create_test/tasks/løkker/løkker4.py"
+    },
+    {
+      "title": "Løkker 5",
+      "content": [
+        "loops5"
+      ],
+      "code": "create_test/tasks/løkker/løkker5.py"
+    },
+    {
+      "title": "Løkker 6",
+      "content": [
+        "loops6"
+      ]
+    },
+    {
+      "title": "Løkker 7",
+      "content": [
+        "loops7"
+      ],
+      "code": "create_test/tasks/løkker/løkker7.py"
+    },
+    {
+      "title": "Løkker 8",
+      "content": [
+        "loops8"
+      ],
+      "code": "create_test/tasks/løkker/løkker8.py"
+    },
+    {
+      "title": "Løkker 9",
+      "content": [
+        "loops9"
+      ],
+      "code": "create_test/tasks/løkker/løkker9.py"
+    },
+    {
+      "title": "Løkker 10",
+      "content": [
+        "loops10"
+      ],
+      "code": "create_test/tasks/løkker/løkker10.py"
+    },
+    {
+      "title": "Løkker 11",
+      "content": [
+        "loops11"
+      ],
+      "code": "create_test/tasks/løkker/løkker11.py"
+    },
+    {
+      "title": "Funksjoner 1",
+      "content": [
+        "functions1"
+      ],
+      "code": "create_test/tasks/funksjoner/funksjoner1.py"
+    },
+    {
+      "title": "Funksjoner 2",
+      "content": [
+        "functions2"
+      ],
+      "code": "create_test/tasks/funksjoner/funksjoner2.py"
+    },
+    {
+      "title": "Funksjoner 3",
+      "content": [
+        "functions3"
+      ],
+      "code": "create_test/tasks/funksjoner/funksjoner3.py"
+    },
+    {
+      "title": "Funksjoner 4",
+      "content": [
+        "functions4"
+      ],
+      "code": "create_test/tasks/funksjoner/funksjoner4.py"
+    },
+    {
+      "title": "Funksjoner 5",
+      "content": [
+        "functions5"
+      ],
+      "code": "create_test/tasks/funksjoner/funksjoner5.py"
+    },
+    {
+      "title": "Funksjoner 6",
+      "content": [
+        "functions6a",
+        "functions6b"
+      ],
+      "code": "create_test/tasks/funksjoner/funksjoner6.py"
+    },
+    {
+      "title": "Funksjoner 7a",
+      "content": [
+        "functions7a"
+      ],
+      "code": "create_test/tasks/funksjoner/funksjoner7a.py"
+    },
+    {
+      "title": "Funksjoner 7b",
+      "content": [
+        "functions7b"
+      ],
+      "code": "create_test/tasks/funksjoner/funksjoner7b.py"
+    },
+    {
+      "title": "Funksjoner 7c",
+      "content": [
+        "functions7c"
+      ],
+      "code": "create_test/tasks/funksjoner/funksjoner7c.py"
+    },
+    {
+      "title": "Siste spørsmål",
+      "content": [
+        "difficulty",
+        "comments"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+((c-mode (indent-tabs-mode . nil)
+	 (fill-column . 80))
+ (c++-mode (indent-tabs-mode . nil)
+	   (fill-column . 80))
+ (ada-mode (indent-tabs-mode . nil)
+	   (fill-column . 80)))

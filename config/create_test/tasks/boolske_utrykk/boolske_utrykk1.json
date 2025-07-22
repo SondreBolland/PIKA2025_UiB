@@ -1,0 +1,67 @@
+    {
+        "1booltext": {
+            "caption": "",
+            "type": "plain-text",
+            "text": "For hver av de følgende boolske utrykkene, velg hvilken boolsk verdi (<code>True</code>/<code>False</code>) utrykket evaluerer til:"
+        },
+        "bool1a": {
+            "caption": "<code>2 > 7</code>",            
+            "type": "options",
+            "options": [
+                "False",
+                "True",
+                "Jeg vet ikke"
+            ],
+            "keys": [
+                "false",
+                "true",
+                "-"
+            ],
+            "correct": "false"
+        },
+        "bool1b": {
+            "caption": "<code>(10 + 3) >= 13</code>",
+            "type": "options",
+            "options": [
+                "False",
+                "True",
+                "Jeg vet ikke"
+            ],
+            "keys": [
+                "false",
+                "true",
+                "-"
+            ],
+            "correct": "true"
+        },
+        "bool1c": {
+            "caption": "<code>(10 * 2) < 9</code>",
+            "type": "options",
+            "options": [
+                "False",
+                "True",
+                "Jeg vet ikke"
+            ],
+            "keys": [
+                "false",
+                "true",
+                "-"
+            ],
+            "correct": "false"
+        },
+        "bool1d": {
+            "caption": "<code>(1 + 3) < (2 * 3)</code>",
+            "type": "options",
+            "options": [
+                "False",
+                "True",
+                "Jeg vet ikke"
+            ],
+            "keys": [
+                "false",
+                "true",
+                "-"
+            ],
+            "correct": "true"
+        }
+    }

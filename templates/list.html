@@ -1,0 +1,12 @@
+{% extends "template.html" %}
+{% block body %}
+
+<h1>Available surveys</h1>
+
+<ul>
+	{% for i in avail %}
+	<li><a href="{{ url_for('enter', name=i[1]) }}">{{ i[2] }}</a></li>
+	{% endfor %}
+</ul>
+
+{% endblock %}

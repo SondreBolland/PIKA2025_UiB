@@ -1,0 +1,23 @@
+{
+    "functions5": {
+        "caption": "Hvilken av følgende kan brukes til å erstatte innholdet i funksjonen <code>calculate</code> slik at den modifiserte versjonen av <code>calculate</code> returnerer det samme resultatet som den opprinnelige versjonen for alle verdier av x?",
+        "type": "options",
+        "options": [
+            "return 3 + x",
+            "return 3 * x",
+            "return 4 + x",
+            "return 4 * x",
+            "return 8 * x",
+            "Jeg vet ikke"
+        ],
+        "keys": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "-"
+        ],
+        "correct": "v"
+    }
+}

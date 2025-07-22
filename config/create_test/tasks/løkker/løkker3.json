@@ -1,0 +1,23 @@
+{
+	"loops3": {
+		"caption": "Hvilket av de følgende utsagnene beskriver best hva som skjer når while-løkken kjøres? Svar nederst på siden.<br></br><strong>I)</strong> Når j er mindre enn 10, skriv ut \"Book i\":<br></br><code>Book 1</code><br></br><code>Book 2</code><br></br>...<br></br><code>Book 9</code><br></br><strong>II)</strong> Når j er mindre enn 10, skriv ut \"Book j\":<br></br><code>Book 0</code><br></br><code>Book 1</code><br></br>...<br></br><code>Book 9</code><br></br><strong>III)</strong> j er alltid lik 0, som er mindre enn 10; så skriv ut \"Book 0\" et uendelig antall ganger:<br></br><code>Book 0</code><br></br><code>Book 0</code><br></br><code>...</code><br></br><strong>IV)</strong> j er alltid lik 0, som er mindre enn 10; så skriv ut \"Book i\" et uendelig antall ganger:<br></br><code>Book 1</code><br></br><code>Book 2</code><br></br>...<br></br><strong>V)</strong> j er lik 0, som er mindre enn 10; så skriv ut:<br></br><code>Book 1</code>",
+		"type": "options",
+		"options": [
+			"I",
+			"II",
+			"III",
+			"IV",
+			"V",
+			"Jeg vet ikke"
+		],
+		"keys": [
+			"i",
+			"ii",
+			"iii",
+			"iv",
+			"v",
+			"-"
+		],
+		"correct": "iv"
+	}
+}

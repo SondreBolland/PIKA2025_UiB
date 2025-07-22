@@ -1,0 +1,67 @@
+    {
+        "3booltext": {
+            "caption": "",
+            "type": "plain-text",
+            "text": "For hver av de følgende boolske utrykkene, velg hvilken boolsk verdi (<code>True</code>/<code>False</code>) utrykket evaluerer til:"
+        },
+        "bool3a": {
+            "caption": "<code>True or False</code>",
+            "type": "options",
+            "options": [
+                "False",
+                "True",
+                "Jeg vet ikke"
+            ],
+            "keys": [
+                "false",
+                "true",
+                "-"
+            ],
+            "correct": "true"
+        },
+        "bool3b": {
+            "caption": "<code>True and False</code>",
+            "type": "options",
+            "options": [
+                "False",
+                "True",
+                "Jeg vet ikke"
+            ],
+            "keys": [
+                "false",
+                "true",
+                "-"
+            ],
+            "correct": "false"
+        },
+        "bool3c": {
+            "caption": "<code>True == True</code>",
+            "type": "options",
+            "options": [
+                "False",
+                "True",
+                "Jeg vet ikke"
+            ],
+            "keys": [
+                "false",
+                "true",
+                "-"
+            ],
+            "correct": "true"
+        },
+        "bool3d": {
+            "caption": "<code>not (True != True)</code>",
+            "type": "options",
+            "options": [
+                "False",
+                "True",
+                "Jeg vet ikke"
+            ],
+            "keys": [
+                "false",
+                "true",
+                "-"
+            ],
+            "correct": "true"
+        }
+    }

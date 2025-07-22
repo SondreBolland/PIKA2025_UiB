@@ -1,0 +1,22 @@
+{% extends "template.html" %}
+{% block body %}
+
+<h1>{{ data.title }}</h1>
+
+<p>
+	{{ data.introduction | safe }}
+</p>
+
+<p>
+	{{ data.questions_text }}
+	{% for i in data.owners %}
+	{% if loop.index0 > 0 %} {{ data.questions_or }} {% endif %}
+	<a href="mailto:{{ i.email }}">{{ i.name }}</a>
+	{% endfor %}
+</p>
+
+<form action="#" method="post">
+	<input type="submit" name="next" value="{{ data.next }}" class="big" />
+</form>
+
+{% endblock %}

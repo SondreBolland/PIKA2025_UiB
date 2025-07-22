@@ -1,0 +1,15 @@
+{
+	"loops4": {
+		"caption": "Hva skrives ut når denne koden kjøres?",
+        "type": "multi_line_text",
+        "options": [
+            "Utskrift:",
+            "Jeg vet ikke"
+        ],
+		"keys": [
+            "integer:",
+            "-"
+        ],
+		"correct": "integer:531"
+	}
+}

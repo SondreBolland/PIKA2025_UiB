@@ -1,0 +1,23 @@
+{
+	"loops6": {
+		"caption": "I hvilket av de følgende tilfellene er det IKKE passende å bruke en for-løkke?",
+		"type": "options",
+		"options": [
+			"Når jeg vil skrive ut alle verdiene i en liste på slutten av programmet.",
+			"Når jeg vil gjenta noe et bestemt antall ganger.",
+			"Når jeg vil telle over et tallintervall.",
+			"Når jeg vil utføre samme operasjon på ulike elementer i en liste.",
+			"Når jeg vil iterere fram til en bestemt betyngelse er oppfylt.",
+			"Jeg vet ikke"
+		],
+		"keys": [
+			"i",
+			"ii",
+			"iii",
+			"iv",
+			"v",
+			"-"
+		],
+		"correct": "v"
+	}
+}

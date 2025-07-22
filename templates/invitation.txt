@@ -1,0 +1,6 @@
+{{ data.email_intro }}
+
+{{ url }}
+
+{{ data.questions_text }}{% for i in data.owners %}{% if loop.index0 > 0 %}{{ data.questions_or }}{% endif %}{{ i.name }} ({{ i.email }}){% endfor %}
+

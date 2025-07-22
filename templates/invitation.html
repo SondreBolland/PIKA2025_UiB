@@ -1,0 +1,20 @@
+<html>
+	<head></head>
+	<body>
+		<p>
+			{{ data.email_intro }}
+		</p>
+
+		<p>
+			<a href="{{ url }}">{{ url }}</a>
+		</p>
+
+		<p>
+			{{ data.questions_text }}
+			{% for i in data.owners %}
+			{% if loop.index0 > 0 %} {{ data.questions_or }} {% endif %}
+			<a href="mailto:{{ i.email }}">{{ i.name }}</a>
+			{% endfor %}
+		</p>
+	</body>
+</html>

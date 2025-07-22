@@ -1,0 +1,28 @@
+{
+    "variables1a": {
+        "caption": "Hva er verdien til variabelen <strong>a</strong> etter linje 4 er utført?",
+        "type": "options",
+        "options": [
+            "Dens verdi er:",
+            "Jeg vet ikke"
+        ],
+        "keys": [
+            "integer:",
+            "-"
+        ],
+        "correct": "integer:20"
+    },
+    "variables1b": {
+        "caption": "Hva er verdien til variabelen <strong>b</strong> etter linje 4 er utført?",
+        "type": "options",
+        "options": [
+            "Dens verdi er:",
+            "Jeg vet ikke"
+        ],
+        "keys": [
+            "integer:",
+            "-"
+        ],
+        "correct": "integer:20"
+    }
+}

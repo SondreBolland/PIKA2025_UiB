@@ -1,0 +1,117 @@
+{
+    "expressions": {
+        "answers": {
+            "expressions1": 5,
+            "expressions2": 24,
+            "expressions3": 20,
+            "expressions4": 2,
+            "expressions5": "123123",
+            "expressions6": "111"
+        },
+        "score": 1
+    },
+    "variables": {
+        "answers": {
+            "variables1a": 20,
+            "variables1b": 20,
+            "variables2a": 10,
+            "variables2b": 10,
+            "variables3a": 20,
+            "variables3b": 20,
+            "variables4a": 20,
+            "variables4b": 30,
+            "variables4c": 30,
+            "variables5a": 30,
+            "variables5b": 30,
+            "variables5c": 30
+        },
+        "score": 1
+    },
+    "bool": {
+        "answers": {
+            "bool1a": "False",
+            "bool1b": "True",
+            "bool1c": "False",
+            "bool1d": "True",
+            "bool2a": "False",
+            "bool2b": "True",
+            "bool2c": "False",
+            "bool2d": "True",
+            "bool2e": "True",
+            "bool2f": "True",
+            "bool2g": "True",
+            "bool3a": "True",
+            "bool3b": "False",
+            "bool3c": "True",
+            "bool3d": "True",
+            "bool4a": "True",
+            "bool4b": "False",
+            "bool4c": "False",
+            "bool4d": "True",
+            "bool4e": "False",
+            "bool5a": "True",
+            "bool5b": "False",
+            "bool5c": "True",
+            "bool5d": "True",
+            "bool5e": "False",
+            "bool6": "iiandiii"
+            
+        },
+        "score": 1
+    },
+    "lists": {
+        "answers": {
+            "lists1": 20,
+            "lists2": 4,
+            "lists3": 80,
+            "lists4": 25,
+            "lists5a": "10,20,30",
+            "lists5b": "5,35,25",
+            "lists6a": "10,20,35",
+            "lists6b": "20,15,25"
+        },
+        "score": 1
+    },
+    "conditionals": {
+        "answers": {
+            "conditionals1": "nothing",
+            "conditionals2": 2,
+            "conditionals3": 2,
+            "conditionals4": 3,
+            "conditionals5": "iv"  
+        },
+        "score": 1
+    },
+    "loops": {
+        "answers": {
+            "loops1": 10,
+            "loops2": 100,
+            "loops3": "iv",
+            "loops4": "5 3 1",
+            "loops5": "6 4 2 1",
+            "loops6": "v",
+            "loops7": 3,
+            "loops8": "1 1 1 2",
+            "loops9": 12,
+            "loops10": 9,
+            "loops11": 9
+                        
+        },
+        "score": 1
+    },
+    "functions": {
+        "answers": {
+            "functions1": 7,
+            "functions2": "1 2 1 2",
+            "functions3": "iv",
+            "functions4": "iii",
+            "functions5": "v",
+            "functions6a": 10,
+            "functions6b": 10,
+            "functions7a": 7,
+            "functions7b": 7,
+            "functions7c": 10
+        },
+        "score": 1
+    }
+}

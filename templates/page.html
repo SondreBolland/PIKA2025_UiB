@@ -1,0 +1,169 @@
+{% extends "template.html" %}
+{% block head %}
+{% if code %}
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='shCoreDefault.css') }}" />
+<script src="{{ url_for('static', filename='shCore.js') }}"></script>
+<script src="{{ url_for('static', filename=code_js) }}"></script>
+<script>SyntaxHighlighter.all();</script>
+{% endif %}
+<script src="{{ url_for('static', filename='validate.js') }}"></script>
+<script>
+	document.value_types = {{ value_types_json | safe }};
+	document.errors = {{ errors_json | safe }};
+</script>
+{% endblock %}
+{% block body %}
+
+<h1>{{ page.title }} ({{ currpage }}/{{ numpages }})</h1>
+
+{% if code %}
+<pre class="brush: {{ code_brush }}">{{ code }}</pre>
+{% endif %}
+
+{% if code_img %}
+<img src="{{ code_img }}" alt="Code snippet" style="max-width: 100%; border: 1px solid #ccc;" />
+{% endif %}
+
+<form action="#" method="post" id="page">
+
+	{% for key, q in questions %}
+	<h3 class="qtitle">{{ q.caption | safe }}</h3>
+
+	{% if q.text %}
+	<p>
+		{{ q.text | safe }}
+	</p>
+	{% endif %}
+
+	<p>
+		<input type="hidden" name="type_{{ loop.index0 }}" value="{{ q.type }}" />
+		<input type="hidden" name="key_{{ loop.index0 }}" value="{{ key }}" />
+
+	<div id="error_{{ key }}" style="display: none;" class="errorbox">Error</div>
+
+	{% if q.type == "options" %}
+
+	{% for o in q.options %}
+	<label for="{{ key }}_{{ loop.index0 }}">
+		<input type="radio" name="{{ key }}" value="{{ loop.index0 }}" id="{{ key }}_{{ loop.index0 }}" />
+		{{ o }}
+		{% if q['keys'][loop.index0].endswith(':') %}
+		<div id="error_{{ key }}_text_{{ loop.index0 }}" style="display: none;" class="indentederrorbox">Error</div>
+		<input class="indented" type="text" name="{{ key }}_text_{{ loop.index0 }}"
+			id="{{ key }}_text_{{ loop.index0 }}"
+			onclick="javascript:getElementById('{{ key }}_{{ loop.index0 }}').checked = true;" />
+		{% endif %}
+	</label>
+	{% endfor %}
+
+	{% elif q.type == "options-multi" %}
+
+	{% for o in q.options %}
+	<label for="{{ key }}_{{ loop.index0 }}">
+		<input type="checkbox" name="{{ key }}" value="{{ loop.index0 }}" id="{{ key }}_{{ loop.index0 }}" />
+		{{ o }}
+		{% if q['keys'][loop.index0].endswith(':') %}
+		<div id="error_{{ key }}_text_{{ loop.index0 }}" style="display: none;" class="indentederrorbox">Error</div>
+		<input class="indented" type="text" name="{{ key }}_text_{{ loop.index0 }}"
+			id="{{ key }}_text_{{ loop.index0 }}"
+			onclick="javascript:getElementById('{{ key }}_{{ loop.index0 }}').checked = true;" />
+		{% endif %}
+	</label>
+	{% endfor %}
+
+	{% elif q.type == "options-list" %}
+	<select name="{{ key }}" class="wide">
+		<option value="">{{ data.pick_one }}</option>
+		{% for o in q.options %}
+		<option value="{{ loop.index0 }}">{{ o }}</option>
+		{% endfor %}
+	</select>
+
+	{% elif q.type == "number" %}
+	<input type="number" name="{{ key }}" />
+
+	{% elif q.type == "text" %}
+	<input type="text" name="{{ key }}" class="wide" placeholder="{{ data.textplaceholder }}" />
+
+	{% elif q.type == "multi_line_text" %}
+	{% for o in q.options %}
+	<label for="{{ key }}_{{ loop.index0 }}">
+		<input type="radio" name="{{ key }}" value="{{ loop.index0 }}" id="{{ key }}_{{ loop.index0 }}" />
+		{{ o }}
+		{% if q['keys'][loop.index0].endswith(':') %}
+		<div id="error_{{ key }}_text_{{ loop.index0 }}" style="display: none;" class="indentederrorbox">Error</div>
+		<textarea class="indented" name="{{ key }}_text_{{ loop.index0 }}"
+		          id="{{ key }}_text_{{ loop.index0 }}"
+		          rows="5" cols="50"
+		          onclick="document.getElementById('{{ key }}_{{ loop.index0 }}').checked = true;"></textarea>
+		{% endif %}
+	</label>
+	{% endfor %}
+
+	{% elif q.type == "optional_text" %}
+	<input type="text" name="{{ key }}" class="wide" placeholder="{{ data.textplaceholder }}" />
+
+	{% elif q.type == "range" %}
+	<span style="float: left;">{{ q.min_text }}</span>
+	<span style="float: right;">{{ q.max_text }}</span>
+	<input class="wide" type="range" name="{{ key }}" min="{{ q.min_val }}" max="{{ q.max_val }}" />
+
+	{% elif q.type == "value" %}
+
+	<select name="{{ key }}" onchange="updateHint(this);" onload="updateHints(this);">
+		<option value="">{{ data.pick_one }}</option>
+		{% for opt_k, opt_v in value_types %}
+		<option value="{{ opt_k }}">{{ opt_v.name }}</option>
+		{% endfor %}
+	</select>
+
+	<input type="text" style="width: 30%;" name="{{ key }}_val" placeholder="{{ data.valueplaceholder }}" />
+
+	<div class="typehint" style="display: inline;" name="{{ key }}_hint"></div>
+
+	{% elif q.type == "type" %}
+
+	<select name="{{ key }}" class="wide">
+		<option value="">{{ data.pick_one }}</option>
+		{% for opt_k, opt_v in value_types %}
+		<option value="{{ opt_k }}">{{ opt_v.name }}</option>
+		{% endfor %}
+	</select>
+
+	{% elif q.type == "plain-text" %}
+
+
+	{% endif %}
+	</p>
+	{% endfor %}
+
+
+	<input type="hidden" name="next" value="1" />
+	<input type="button" value="{{ data.next }}" class="big" onclick="validateAndSend(event);" />
+</form>
+
+<script>
+	updateHints();
+	function toggleIDKTextarea(key, isChecked, idkValue) {
+		const textarea = document.getElementById(key);
+		if (!textarea) return;
+
+		if (isChecked) {
+			textarea.value = idkValue;
+			textarea.readOnly = true;
+		} else {
+			textarea.value = "";
+			textarea.readOnly = false;
+		}
+	}
+</script>
+
+<p>
+	{{ data.questions_text }}
+	{% for i in data.owners %}
+	{% if loop.index0 > 0 %} {{ data.questions_or }} {% endif %}
+	<a href="mailto:{{ i.email }}">{{ i.name }}</a>
+	{% endfor %}
+</p>
+
+{% endblock %}

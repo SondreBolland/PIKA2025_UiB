@@ -1,0 +1,28 @@
+{
+	"lists6a": {
+		"caption": "Hvilke verdier har listen <code>a</code> etter linje 6 er utført?<br></br><small>Skriv hver verdi separert med et komma, slik: <code>1, 2, 3</code></small>",
+		"type": "options",
+		"options": [
+            "Verdiene i liste a:",
+            "Jeg vet ikke"
+        ],
+		"keys": [
+            "list:",
+            "-"
+        ],
+		"correct": "list:10,20,35"
+	},
+	"lists6b": {
+		"caption": "Hvilke verdier har listen <code>b</code> etter linje 6 er utført?<br></br><small>Skriv hver verdi separert med et komma, slik: <code>1, 2, 3</code></small>",
+		"type": "options",
+		"options": [
+            "Verdiene i liste b:",
+            "Jeg vet ikke"
+        ],
+		"keys": [
+            "list:",
+            "-"
+        ],
+		"correct": "list:20,15,25"
+	}
+}

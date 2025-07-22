@@ -1,0 +1,21 @@
+{
+    "functions4": {
+    "caption": "Vurder følgende metode, <b>between</b>, som er ment å returnere true dersom <code>x</code> er mellom <code>lower</code> og <code>upper</code>, og false ellers.<br></br>Hvilken av følgende kan brukes til å erstatte <code># Missing code</code> slik at <b>between</b> fungerer som ønsket?",
+    "type": "options",
+      "options": [
+        "return (x <= lower) and (x >= upper)",
+        "return (x <= lower) or (x >= upper)",
+        "return (x >= lower) and (x <= upper)",
+        "return (x >= lower) or (x <= upper)",
+        "Jeg vet ikke"
+      ],
+      "keys": [
+        "i",
+        "ii",
+        "iii",
+        "iv",
+        "-"
+      ],
+      "correct": "iii"
+    }
+}

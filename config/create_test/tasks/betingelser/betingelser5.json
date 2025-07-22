@@ -1,0 +1,21 @@
+{
+  "conditionals5": {
+    "caption": "Hvilke av de følgende alternativene for <code>MISSING_CODE1</code> og <code>MISSING_CODE2</code> vil skrive ut <code>2</code> og <code>3</code>.<br></br><b>I.</b><br><code>MISSING_CODE1</code>: <code>x or y</code><br><code>MISSING_CODE2</code>: <code>y and not x</code><br><br><b>II.</b><br><code>MISSING_CODE1</code>: <code>not y</code><br><code>MISSING_CODE2</code>: <code>x or y</code><br><br><b>III.</b><br><code>MISSING_CODE1</code>: <code>x and y</code><br><code>MISSING_CODE2</code>: <code>y and z</code><br><br><b>IV.</b><br><code>MISSING_CODE1</code>: <code>x and not y</code><br><code>MISSING_CODE2</code>: <code>not z and x</code>",
+    "type": "options",
+    "options": [
+      "I",
+      "II",
+      "III",
+      "IV",
+      "Jeg vet ikke"
+    ],
+    "keys": [
+      "i",
+      "ii",
+      "iii",
+      "iv",
+      "-"
+    ],
+    "correct": "ii"
+  }
+}

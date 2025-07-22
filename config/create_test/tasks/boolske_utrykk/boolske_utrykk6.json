@@ -1,0 +1,23 @@
+{
+	"bool6": {
+		"caption": "Anta at <code>a</code>, <code>b</code> og <code>c</code> er variabler av typen <code>int</code> (heltall). Vurder de følgende tre uttrykkene:<br></br> I. &nbsp;&nbsp;<code>(a == b) and (a == c) and (b == c)</code><br></br> II. &nbsp;<code>(a == b) or (a == c) or (b == c)</code><br></br> III. <code>((a - b) * (a - c) * (b - c)) == 0</code><br></br><br></br> Hvilke(t) av uttrykkene ovenfor er alltid sann(e) dersom minst to av <code>a</code>, <code>b</code> og <code>c</code> er like?",
+		"type": "options",
+		"options": [
+			"Bare I",
+			"Bare II",
+			"Bare III",
+			"I og II",
+			"II og III",
+			"Jeg vet ikke"
+		],
+		"keys": [
+			"i",
+			"ii",
+			"iii",
+			"iandii",
+			"iiandiii",
+			"-"
+		],
+		"correct": "iiandiii"
+	}
+}
