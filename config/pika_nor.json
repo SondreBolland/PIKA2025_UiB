@@ -4,7 +4,7 @@
   "open": true,
   "email_subject": "PIKA: Forhåndskunnskap i informatikk",
   "email_intro": "...",
-  "introduction": "<b>PIKA: Prior Informatics Knowledge Assessment 2025</b><br><br>Denne testen hjelper oss å forstå hvilke programmeringskunnskaper studentene har med seg når de begynner i høyere utdanning. Ved å finne ut hva du allerede kan, kan vi forbedre undervisningen av programmering!<br><br>Denne testen er <b>ikke</b> en vurdering av deg og vil ha <b>ingen betydning</b> for karakteren din. Deltakelse er helt frivillig.<br><br>Emnet <b>Innføring i programmering</b> som du snart skal begynne på, starter med det grunnleggende uansett hvordan du presterer på denne testen :)",
+  "introduction": "<b>PIKA: Prior Informatics Knowledge Assessment 2025</b><br><br>Denne testen hjelper oss å forstå hvilke programmeringskunnskaper studentene har med seg når de begynner i høyere utdanning. Ved å finne ut hva du allerede kan, kan vi forbedre undervisningen av programmering!<br><br>Denne testen er <b>ikke</b> en vurdering av deg og vil ha <b>ingen betydning</b> for karakteren din. Deltakelse er helt frivillig.<br><br>Emnet <b>INF100 - Innføring i programmering</b> starter med det grunnleggende uansett hvordan du presterer på denne testen :)",
   "thanks": "Takk for at du svarte! Vil du se resultater fra tidligere år? Ta en titt her: <a href=\"https://pika-test.org/\">pika-test.org</a>.",
   "next": "Neste",
   "pick_one": "Velg ett alternativ",
@@ -103,20 +103,27 @@
     }
   },
   "questions": {
-    "consent": {
-      "caption": "",
+    "research": {
+      "caption": "Vil du delta i et forskningsprosjekt?",
       "type": "plain-text",
-      "text": "Ved å delta i denne testen samtykker du i at svarene dine kan brukes til forskningsformål med mål om å bedre forstå hvordan studenter nærmer seg programmeringsoppgaver. Din deltakelse er helt frivillig.<br><br>Vennligst merk følgende:<ul><li>Dine individuelle svar vil aldri bli publisert eller delt.</li><li>Alle resultater vil kun bli rapportert i aggregert form – som gjennomsnitt, trender eller sammenligninger mellom grupper.</li><li>Formålet med denne forskningen er å forbedre programmeringsundervisningen ved å analysere hvordan ulike grupper av studenter presterer på ulike typer oppgaver.</li></ul>"
+      "text": "Her spør vi om du ønsker å delta i et forskningsprosjekt tilknyttet denne testen hvor vi lagrer data om dine forkunnskaper i programmering og sammenligner med dine eksamensresultater de neste tre semestrene. Her er detaljene:<br><h4>Vil du delta i forskningsprosjektet \"Langtidseffekten av programmeringsundervisning før høyere utdanning\"?</h4><b>Formålet med prosjektet</b><br>Dette er et spørsmål til deg om du vil delta i et forskningsprosjekt hvor formålet er å undersøke hva av forkunnskaper du har om programmering før du begynner høyere utdanning og hvordan disse kunnskapene påvirker resultatene i de programmeringsemnene du skal ta i de første årene av bacheloren din. Vi ønsker å finne ut om slike forkunnskaper gjør en forskjell på hvor godt du lærer programmering på universitetsnivå. Dette er et forskningsprosjekt som samler inn informasjon fra studenter ved Universitetet i Bergen og Universitetet i Oslo, ment for å forbedre undervisningen av programmering.<br></br>Vennligst merk følgende:<ul><li>Dine individuelle svar vil aldri bli publisert eller delt.</li><li>Alle resultater vil kun bli rapportert i aggregert form – som gjennomsnitt, trender eller sammenligninger mellom grupper.</li><li>Formålet med denne forskningen er å forbedre programmeringsundervisningen ved å analysere hvordan ulike grupper av studenter presterer på ulike typer oppgaver.</li></ul><b>Hvorfor får du spørsmål om å delta?</b><br>Du får denne forespørselen fordi du er oppmeldt i kurset INF100 – Innføring i programmering.<br><br><b>Hvem er ansvarlig for forskningsprosjektet?</b><br>Ansvarlig for personopplysningene som behandles i prosjektet er Sondre Sæther Bolland ved Institutt for Informatikk ved Universitetet i Bergen og Siri Moe Jensen ved Institutt for Informatikk ved Universitetet i Oslo.<br><br><b>Du kan reservere deg</b><br>Du kan velge å reservere deg mot å delta i dette prosjektet. Hvis du ønsker å reservere deg, velg <i>Jeg samtykker IKKE</i> på bunnen av denne siden. Det vil ikke ha noen negative konsekvenser for deg hvis du ikke vil delta.<br><br><b>Hva innebærer det for deg å delta?</b><br>Deltagelse i dette forskningsprosjektet innebærer:<br>• å svare på denne testen om dine programmeringskunnskaper.<br>• at vi samler inn poengsum fra eksamen i emnene INF100, INF101 og INF102.<br><br>I dette forskningsprosjektet vil vi samle inn de følgende personopplysningene:<br>• Ditt universitetsbrukernavn<br>• Hvilket studieprogram du er oppmeldt<br>• Ditt kjønn<br>• Når du fullførte videregående<br>• Hvilke fag du fullførte på videregående<br>• Hvor mye programmering du har gjort på fritiden<br>• Hvorvidt du har fullført en programmeringsemne i høyere utdanning tidligere<br><br>Disse opplysningene registreres via dette elektroniske spørreskjemaet og lagres på en godkjent og sikker forskningsserver—Norwegian Research and Education Cloud. Vi vil bruke ditt universitetsbrukernavn til å hente ut eksamenspoengsum i emnene IN1000, IN1010 og IN2010 fra instituttets administrasjon.<br><br><b>Kort om personvern</b><br>Vi vil bare bruke opplysningene om deg til formålene vi har fortalt om i dette skrivet. Vi behandler personopplysningene konfidensielt og i samsvar med personvernregelverket. Du kan lese mer om personvern ved å <a href=\"https://pika-test.org/personvern/\">klikke her</a>."
     },
-    "consent_answer": {
-      "caption": "<b>Samtykker du til at svarene dine brukes i denne forskningen?</b><br><small>Hvis ikke, vennligst lukk dette vinduet.</small>",
+    "research_answer": {
+      "caption": "Samtykker du til å delta i dette forskningsprosjektet?",
       "type": "options",
       "options": [
-        "Jeg samtykker"
+        "Jeg samtykker. Dette er mitt UiB-brukernavn:",
+        "Jeg samtykker IKKE"
       ],
       "keys": [
-        "consent"
+        "consent:",
+        "no_consent"
       ]
+    },
+    "username": {
+      "caption": "",
+      "type": "plain-text",
+      "text": "Dette er brukernavnet du har fått for din universitetsbruker. Du bruker den til å logge inn på MittUiB og e-posten din. Brukernavnet begynner med 3-4 bokstaver etterfulgt av 3-4 tall. F.eks.:<br><b>abcd1234</b> eller <b>abc123</b><br>Hvis du ikke vet hva ID'en din er så kan du gå på INF100-emnesiden (MittUiB) og søke opp navnet ditt under \"Personer\"."
     },
     "guidelines": {
       "caption": "",
@@ -1573,10 +1580,11 @@
   },
   "pages": [
     {
-      "title": "Samtykke",
+      "title": "Forskningsprosjekt",
       "content": [
-        "consent",
-        "consent_answer"
+        "research",
+        "research_answer",
+        "username"
       ]
     },
     {
@@ -1587,15 +1595,8 @@
       ]
     },
     {
-      "title": "Hva er din SIS-ID",
-      "content": [
-        "id"
-      ]
-    },
-    {
       "title": "Hvor studerer du?",
       "content": [
-        "institution",
         "study_field"
       ]
     },

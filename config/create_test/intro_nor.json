@@ -1,389 +1,351 @@
 {
-    "name": "pika_nor",
-    "title": "Kan du allerede litt programmering?",
-    "open": true,
-    "email_subject": "PIKA: Forhåndskunnskap i informatikk",
-    "email_intro": "...",
-    "introduction": "<b>PIKA: Prior Informatics Knowledge Assessment 2025</b><br><br>Denne testen hjelper oss å forstå hvilke programmeringskunnskaper studentene har med seg når de begynner i høyere utdanning. Ved å finne ut hva du allerede kan, kan vi forbedre undervisningen av programmering!<br><br>Denne testen er <b>ikke</b> en vurdering av deg og vil ha <b>ingen betydning</b> for karakteren din. Deltakelse er helt frivillig.<br><br>Emnet <b>Innføring i programmering</b> som du snart skal begynne på, starter med det grunnleggende uansett hvordan du presterer på denne testen :)",
-    "thanks": "Takk for at du svarte! Vil du se resultater fra tidligere år? Ta en titt her: <a href=\"https://pika-test.org/\">pika-test.org</a>.",
+  "name": "pika_nor",
+  "title": "Kan du allerede litt programmering?",
+  "open": true,
+  "email_subject": "PIKA: Forhåndskunnskap i informatikk",
+  "email_intro": "...",
+  "introduction": "<b>PIKA: Prior Informatics Knowledge Assessment 2025</b><br><br>Denne testen hjelper oss å forstå hvilke programmeringskunnskaper studentene har med seg når de begynner i høyere utdanning. Ved å finne ut hva du allerede kan, kan vi forbedre undervisningen av programmering!<br><br>Denne testen er <b>ikke</b> en vurdering av deg og vil ha <b>ingen betydning</b> for karakteren din. Deltakelse er helt frivillig.<br><br>Emnet <b>INF100 - Innføring i programmering</b> starter med det grunnleggende uansett hvordan du presterer på denne testen :)",
+  "thanks": "Takk for at du svarte! Vil du se resultater fra tidligere år? Ta en titt her: <a href=\"https://pika-test.org/\">pika-test.org</a>.",
+  "next": "Neste",
+  "pick_one": "Velg ett alternativ",
+  "textplaceholder": "Ditt svar",
+  "valueplaceholder": "Verdi",
+  "results": {
+    "type": "summary",
+    "text": "Du svarte riktig på {score} av {max} spørsmål!",
+    "show_correct": false,
+    "question": "Spørsmål",
+    "your_ans": "Ditt svar",
+    "correct_ans": "Riktig svar",
     "next": "Neste",
-    "pick_one": "Velg ett alternativ",
-    "textplaceholder": "Ditt svar",
-    "valueplaceholder": "Verdi",
-    "results": {
-        "type": "summary",
-        "text": "Du svarte riktig på {score} av {max} spørsmål!",
-        "show_correct": false,
-        "question": "Spørsmål",
-        "your_ans": "Ditt svar",
-        "correct_ans": "Riktig svar",
-        "next": "Neste",
-        "prev": "Forrige"
-    },
-    "questions_text": "Hvis du har spørsmål, vennligst kontakt ",
-    "questions_or": " eller ",
-    "owners": [
-        {
-            "name": "Sondre Sæther Bolland",
-            "email": "sondre.bolland@uib.no"
-        }
-    ],
-    "value_types": {
-        "integer": {
-            "key": 0,
-            "name": "Integer (int)",
-            "validate": "[0-9]+",
-            "remove": " ",
-            "format": "{}",
-            "hint": "Example: 100"
-        },
-        "bool": {
-            "key": 1,
-            "name": "Boolean (bool)",
-            "validate": "(true|false)",
-            "remove": " ",
-            "format": "{}",
-            "hint": "Example: true or false"
-        },
-        "float": {
-            "key": 2,
-            "name": "Float (float)",
-            "validate": "[0-9]+.?[0-9]*",
-            "remove": " ",
-            "format": "{}",
-            "hint": "Example: 1.0"
-        },
-        "list": {
-            "key": 3,
-            "name": "List (list)",
-            "validate": " *\\[? *([0-9]+( *, *[0-9]+)*)? *\\]? *",
-            "remove": "[ \\[\\]]",
-            "format": "[{}]",
-            "hint": "Example: 1, 2 or [1, 2]"
-        },
-        "string": {
-            "key": 4,
-            "name": "String (str)",
-            "validate": "(\".*\"|'.*'|[^\"']*)",
-            "remove": "(^\"|^'|\"$|'$)",
-            "format": "\"{}\"",
-            "hint": "Example: \"abc\", 'abc' or abc"
-        },
-        "error": {
-            "key": 5,
-            "name": "An error will occur when running",
-            "validate": "",
-            "remove": null,
-            "format": "Runtime error",
-            "hint": "No value is needed"
-        },
-        "unknown": {
-            "key": 6,
-            "name": "I don't know",
-            "validate": "",
-            "remove": null,
-            "skipped": true,
-            "format": "I don't know",
-            "hint": "No value is needed"
-        }
-    },
-    "errors": {
-        "options": "Choose one option",
-        "number": "Write a number",
-        "text": "The field cannot be empty",
-        "no_value": "Choose a type for the value",
-        "value": {
-            "array": "Fill in a list av integers seperated by commas. For example: 1, 2, 3",
-            "integer": "Fill in an integer",
-            "string": "Fill in a string, either with or without quotation marks.",
-            "dict": "Fill in a dictionary in the given format.",
-            "null": "Fältet måste vara tomt eftersom du har valt None som typ",
-            "unknown": "The field must be empty as you have chosen \"I don't know\"",
-            "nothing": "Fältet måste vara tomt eftersom du har valt att variabeln inte finns"
-        }
-    },
-    "questions": {
-        "consent": {
-            "caption": "",
-            "type": "plain-text",
-            "text": "Ved å delta i denne testen samtykker du i at svarene dine kan brukes til forskningsformål med mål om å bedre forstå hvordan studenter nærmer seg programmeringsoppgaver. Din deltakelse er helt frivillig.<br><br>Vennligst merk følgende:<ul><li>Dine individuelle svar vil aldri bli publisert eller delt.</li><li>Alle resultater vil kun bli rapportert i aggregert form – som gjennomsnitt, trender eller sammenligninger mellom grupper.</li><li>Formålet med denne forskningen er å forbedre programmeringsundervisningen ved å analysere hvordan ulike grupper av studenter presterer på ulike typer oppgaver.</li></ul>"
-        },
-        "consent_answer": {
-            "caption": "<b>Samtykker du til at svarene dine brukes i denne forskningen?</b><br><small>Hvis ikke, vennligst lukk dette vinduet.</small>",
-            "type": "options",
-            "options": [
-                "Jeg samtykker"
-            ],
-            "keys": [
-                "consent"
-            ]
-        },
-        "guidelines": {
-            "caption": "",
-            "type": "plain-text",
-            "text": "Denne testen skal gjennomføres uten bruk av hjelpemidler. Kommunikasjon med andre og bruk av eksterne ressurser som internett, bøker, utskrifter osv. er ikke tillatt.<br></br>De eneste tillatte hjelpemidlene er penn og papir."
-        },
-        "own_work_declaration": {
-            "caption": "<b>Godtar du å følge retningslinjene?</b>",
-            "type": "options",
-            "options": [
-                "Jeg godtar"
-            ],
-            "keys": [
-                "agree"
-            ]
-        },
-        "id": {
-            "caption": "Dette er brukernavnet du har fått for din universitetsbruker. Du bruker den til å logge inn på MittUiB og e-posten din.<br><br>ID'en begynner med 3-4 bokstaver etterfulgt av 3-4 tall. F.eks.:<br><br><b>abcd1234</b> eller <b>abc123</b><br><br>Hvis du ikke vet hva ID'en din er så kan du gå på INF100-emnesiden (MittUiB) og søke opp navnet ditt under \"Personer\".",
-            "type": "text"
-        },
-        "institution": {
-            "caption": "Ved hvilken institusjon (universitet/høyskole) studerer du?",
-            "type": "options-list",
-            "options": [
-                "Universitetet i Bergen (UiB)",
-                "Universitetet i Oslo (UiO)",
-                "Norges teknisk-naturvitenskapelige universitet (NTNU)",
-                "Norges miljø- og biovitenskapelige universitet (NMBU)",
-                "Høgskolen i Østfold (HIOF)",
-                "Høgskulen på Vestlandet (HVL)",
-                "Universitetet i Stavanger (UiS)",
-                "Høyskolen Kristiania"
-            ],
-            "keys": [
-                "UiB",
-                "UiO",
-                "NTNU",
-                "NMBU",
-                "HIOF",
-                "HVL",
-                "UiS",
-                "Kristiania"
-            ]
-        },
-        "study_field": {
-            "caption": "Hva studerer du?",
-            "type": "options-list",
-            "options": [
-                "Informatikk / Datavitenskap / Informasjonsvitenskap",
-                "Matematikk / Statistikk",
-                "Fysikk",
-                "Kjemi",
-                "Biologi / Livsvitenskap / Biomedisin",
-                "Ingeniørfag (f.eks. elektro, maskin, bygg)",
-                "Medisin / Helsefag",
-                "Geofysikk",
-                "Geovitenskap",
-                "Miljøvitenskap",
-                "Økonomi",
-                "Juss",
-                "Annet"
-            ],
-            "keys": [
-                "inf",
-                "math",
-                "phys",
-                "chem",
-                "bio",
-                "eng",
-                "med",
-                "geophys",
-                "geo",
-                "env",
-                "econ",
-                "law",
-                "other"
-            ]
-        },
-        "gender": {
-            "caption": "Hvilket kjønn identifiserer du deg som?",
-            "type": "text"
-        },
-        "graduate_year": {
-            "caption": "Hvilket år fullførte du videregående?",
-            "type": "options-list",
-            "options": [
-                "2024",
-                "2023",
-                "2022",
-                "2021",
-                "2020",
-                "2019",
-                "2018",
-                "2017",
-                "2016",
-                "2015",
-                "2014",
-                "2013",
-                "2012",
-                "2010",
-                "2009",
-                "2008",
-                "2007",
-                "2006",
-                "2005",
-                "2004",
-                "2003",
-                "2002",
-                "2001",
-                "2000",
-                "Tidligere"
-            ],
-            "keys": [
-                "2024",
-                "2023",
-                "2022",
-                "2021",
-                "2020",
-                "2019",
-                "2018",
-                "2017",
-                "2016",
-                "2015",
-                "2014",
-                "2013",
-                "2012",
-                "2010",
-                "2009",
-                "2008",
-                "2007",
-                "2006",
-                "2005",
-                "2004",
-                "2003",
-                "2002",
-                "2001",
-                "2000",
-                "earlier"
-            ]
-        },
-        "math_courses": {
-            "caption": "Hvilke matematikkfag fullførte du på videregående skole?<br></br><small>Velg alle fagene du fullførte, ikke bare det mest avanserte.</small>",
-            "type": "options-multi",
-            "options": [
-                "1P",
-                "1T",
-                "2P",
-                "S1",
-                "S2",
-                "R1",
-                "R2",
-                "Annet"
-            ],
-            "keys": [
-                "1P",
-                "1T",
-                "2P",
-                "S1",
-                "S2",
-                "R1",
-                "R2",
-                "Other"
-            ]
-        },
-        "stem_courses": {
-            "caption": "Hvilke realfag fullførte du på videregående?",
-            "type": "options-multi",
-            "options": [
-                "Biologi 1",
-                "Biologi 2",
-                "Fysikk 1",
-                "Fysikk 2",
-                "Kjemi 1",
-                "Kjemi 2",
-                "Geofag 1",
-                "Geofag 2",
-                "Teknologi og forskningslære 1",
-                "Teknologi og forskningslære 2",
-                "Ingen av disse fagene"
-            ],
-            "keys": [
-                "bio1",
-                "bio2",
-                "2P",
-                "fys1",
-                "fys2",
-                "kjemi1",
-                "kjemi2",
-                "geo1",
-                "geo2",
-                "tof1",
-                "tof2",
-                "none"
-            ]
-        },
-        "prog_courses": {
-            "caption": "Fullførte du noen av disse programmeringsfagene?",
-            "type": "options-multi",
-            "options": [
-                "Informasjonsteknologi 1",
-                "Informasjonsteknologi 2",
-                "Programmering og Modellering X",
-                "Ingen av disse fagene"
-            ],
-            "keys": [
-                "it1",
-                "it2",
-                "pmx",
-                "none"
-            ]
-        },
-        "other_experience": {
-            "caption": "Har du erfaring med programmering utenfor skolen?",
-            "text": "Blokkbasert programmering inkluderer Scratch, Blockly, osv.<br/>Tekstbasert programmering inkluderer Python, Java, C, C#, C++, osv.",
-            "type": "options-multi",
-            "options": [
-                "Jeg har ingen erfaring utenfor skolen",
-                "Minst 30 timers erfaring med tekstbasert programmering",
-                "Minst 50 timers erfaring med tekstbasert programmering",
-                "Minst 100 timers erfaring med tekstbasert programmering",
-                "Mer enn 120 timers erfaring med tekstbasert programmering",
-                "Minst 30 timers erfaring med blokkbasert programmering",
-                "Minst 50 timers erfaring med blokkbasert programmering",
-                "Minst 100 timers erfaring med blokkbasert programmering",
-                "Mer enn 120 timers erfaring med blokkbasert programmering",
-                "Annen erfaring, vennligst spesifiser:"
-            ],
-            "keys": [
-                "none",
-                "text30",
-                "text50",
-                "text100",
-                "text120",
-                "block30",
-                "block50",
-                "block100",
-                "block120",
-                "other:"
-            ]
-        },
-        "uni_course": {
-            "caption": "Har du deltatt i eller fullført et programmerings-/informatikkurs i høyere utdanning før denne testen?<br></br><small>Dette inkluderer ikke kurset du tar nå.</small>",
-            "type": "options",
-            "options": [
-                "Ja, et kurs som ga 10 studiepoeng eller mer",
-                "Ja, et kurs som ga mellom 5 og 10 studiepoeng",
-                "Ja, et kurs som ga 5 studiepoeng eller mindre",
-                "Ja, men kurset ga ingen studiepoeng",
-                "Nei"
-            ],
-            "keys": [
-                "10ECTS",
-                "7.5ECTS",
-                "5ECTS",
-                "0ECTS",
-                "no"
-            ]
-        },
-        "instructions": {
-            "caption": "",
-            "type": "plain-text",
-            "text": "Neste del inneholder programmeringsoppgaver i programmeringsspråket <b>Python</b>.<br/><br/>Hvis du tror du vet svaret, eller har en anelse om hva det kan være, ønsker vi at du svarer.<br></br><h3><b>Viktig</b></h3>Hvis du ikke aner hva svaret kan være, velg <b>\"Jeg vet ikke\"</b>. Husk at denne testen ikke er ment å evaluere deg personlig. Den er laget for å kartlegge generell programmeringskunnskap blant nye studenter, så ikke prøv deg på gjetninger. Velg heller <b>\"Jeg vet ikke\"</b>."
-        },
-        "back_button": {
-            "caption": "Viktig",
-            "type": "plain-text",
-            "text": "Denne testen har ingen tilbake-knapp. Du vil derfor ikke kunne gå tilbake til et tidligere spørsmål for å endre svaret etter å ha klikket på <b>Neste</b>."
-        }
+    "prev": "Forrige"
+  },
+  "questions_text": "Hvis du har spørsmål, vennligst kontakt ",
+  "questions_or": " eller ",
+  "owners": [
+    {
+      "name": "Sondre Sæther Bolland",
+      "email": "sondre.bolland@uib.no"
     }
+  ],
+  "value_types": {
+    "integer": {
+      "key": 0,
+      "name": "Integer (int)",
+      "validate": "[0-9]+",
+      "remove": " ",
+      "format": "{}",
+      "hint": "Example: 100"
+    },
+    "bool": {
+      "key": 1,
+      "name": "Boolean (bool)",
+      "validate": "(true|false)",
+      "remove": " ",
+      "format": "{}",
+      "hint": "Example: true or false"
+    },
+    "float": {
+      "key": 2,
+      "name": "Float (float)",
+      "validate": "[0-9]+.?[0-9]*",
+      "remove": " ",
+      "format": "{}",
+      "hint": "Example: 1.0"
+    },
+    "list": {
+      "key": 3,
+      "name": "List (list)",
+      "validate": " *\\[? *([0-9]+( *, *[0-9]+)*)? *\\]? *",
+      "remove": "[ \\[\\]]",
+      "format": "[{}]",
+      "hint": "Example: 1, 2 or [1, 2]"
+    },
+    "string": {
+      "key": 4,
+      "name": "String (str)",
+      "validate": "(\".*\"|'.*'|[^\"']*)",
+      "remove": "(^\"|^'|\"$|'$)",
+      "format": "\"{}\"",
+      "hint": "Example: \"abc\", 'abc' or abc"
+    },
+    "error": {
+      "key": 5,
+      "name": "An error will occur when running",
+      "validate": "",
+      "remove": null,
+      "format": "Runtime error",
+      "hint": "No value is needed"
+    },
+    "unknown": {
+      "key": 6,
+      "name": "I don't know",
+      "validate": "",
+      "remove": null,
+      "skipped": true,
+      "format": "I don't know",
+      "hint": "No value is needed"
+    }
+  },
+  "errors": {
+    "options": "Choose one option",
+    "number": "Write a number",
+    "text": "The field cannot be empty",
+    "no_value": "Choose a type for the value",
+    "value": {
+      "array": "Fill in a list av integers seperated by commas. For example: 1, 2, 3",
+      "integer": "Fill in an integer",
+      "string": "Fill in a string, either with or without quotation marks.",
+      "dict": "Fill in a dictionary in the given format.",
+      "null": "Fältet måste vara tomt eftersom du har valt None som typ",
+      "unknown": "The field must be empty as you have chosen \"I don't know\"",
+      "nothing": "Fältet måste vara tomt eftersom du har valt att variabeln inte finns"
+    }
+  },
+  "questions": {
+    "research": {
+      "caption": "Vil du delta i et forskningsprosjekt?",
+      "type": "plain-text",
+      "text": "Her spør vi om du ønsker å delta i et forskningsprosjekt tilknyttet denne testen hvor vi lagrer data om dine forkunnskaper i programmering og sammenligner med dine eksamensresultater de neste tre semestrene. Her er detaljene:<br><h4>Vil du delta i forskningsprosjektet \"Langtidseffekten av programmeringsundervisning før høyere utdanning\"?</h4><b>Formålet med prosjektet</b><br>Dette er et spørsmål til deg om du vil delta i et forskningsprosjekt hvor formålet er å undersøke hva av forkunnskaper du har om programmering før du begynner høyere utdanning og hvordan disse kunnskapene påvirker resultatene i de programmeringsemnene du skal ta i de første årene av bacheloren din. Vi ønsker å finne ut om slike forkunnskaper gjør en forskjell på hvor godt du lærer programmering på universitetsnivå. Dette er et forskningsprosjekt som samler inn informasjon fra studenter ved Universitetet i Bergen og Universitetet i Oslo, ment for å forbedre undervisningen av programmering.<br></br>Vennligst merk følgende:<ul><li>Dine individuelle svar vil aldri bli publisert eller delt.</li><li>Alle resultater vil kun bli rapportert i aggregert form – som gjennomsnitt, trender eller sammenligninger mellom grupper.</li><li>Formålet med denne forskningen er å forbedre programmeringsundervisningen ved å analysere hvordan ulike grupper av studenter presterer på ulike typer oppgaver.</li></ul><b>Hvorfor får du spørsmål om å delta?</b><br>Du får denne forespørselen fordi du er oppmeldt i kurset INF100 – Innføring i programmering.<br><br><b>Hvem er ansvarlig for forskningsprosjektet?</b><br>Ansvarlig for personopplysningene som behandles i prosjektet er Sondre Sæther Bolland ved Institutt for Informatikk ved Universitetet i Bergen og Siri Moe Jensen ved Institutt for Informatikk ved Universitetet i Oslo.<br><br><b>Du kan reservere deg</b><br>Du kan velge å reservere deg mot å delta i dette prosjektet. Hvis du ønsker å reservere deg, velg <i>Jeg samtykker IKKE</i> på bunnen av denne siden. Det vil ikke ha noen negative konsekvenser for deg hvis du ikke vil delta.<br><br><b>Hva innebærer det for deg å delta?</b><br>Deltagelse i dette forskningsprosjektet innebærer:<br>• å svare på denne testen om dine programmeringskunnskaper.<br>• at vi samler inn poengsum fra eksamen i emnene INF100, INF101 og INF102.<br><br>I dette forskningsprosjektet vil vi samle inn de følgende personopplysningene:<br>• Ditt universitetsbrukernavn<br>• Hvilket studieprogram du er oppmeldt<br>• Ditt kjønn<br>• Når du fullførte videregående<br>• Hvilke fag du fullførte på videregående<br>• Hvor mye programmering du har gjort på fritiden<br>• Hvorvidt du har fullført en programmeringsemne i høyere utdanning tidligere<br><br>Disse opplysningene registreres via dette elektroniske spørreskjemaet og lagres på en godkjent og sikker forskningsserver—Norwegian Research and Education Cloud. Vi vil bruke ditt universitetsbrukernavn til å hente ut eksamenspoengsum i emnene IN1000, IN1010 og IN2010 fra instituttets administrasjon.<br><br><b>Kort om personvern</b><br>Vi vil bare bruke opplysningene om deg til formålene vi har fortalt om i dette skrivet. Vi behandler personopplysningene konfidensielt og i samsvar med personvernregelverket. Du kan lese mer om personvern ved å <a href=\"https://pika-test.org/personvern/\">klikke her</a>."
+    },
+    "research_answer": {
+      "caption": "Samtykker du til å delta i dette forskningsprosjektet?",
+      "type": "options",
+      "options": [
+        "Jeg samtykker. Dette er mitt UiB-brukernavn:",
+        "Jeg samtykker IKKE"
+      ],
+      "keys": ["consent:", "no_consent"]
+    },
+    "username": {
+      "caption": "",
+      "type": "plain-text",
+      "text": "Dette er brukernavnet du har fått for din universitetsbruker. Du bruker den til å logge inn på MittUiB og e-posten din. Brukernavnet begynner med 3-4 bokstaver etterfulgt av 3-4 tall. F.eks.:<br><b>abcd1234</b> eller <b>abc123</b><br>Hvis du ikke vet hva ID'en din er så kan du gå på INF100-emnesiden (MittUiB) og søke opp navnet ditt under \"Personer\"."
+    },
+    "guidelines": {
+      "caption": "",
+      "type": "plain-text",
+      "text": "Denne testen skal gjennomføres uten bruk av hjelpemidler. Kommunikasjon med andre og bruk av eksterne ressurser som internett, bøker, utskrifter osv. er ikke tillatt.<br></br>De eneste tillatte hjelpemidlene er penn og papir."
+    },
+    "own_work_declaration": {
+      "caption": "<b>Godtar du å følge retningslinjene?</b>",
+      "type": "options",
+      "options": ["Jeg godtar"],
+      "keys": ["agree"]
+    },
+    "id": {
+      "caption": "Dette er brukernavnet du har fått for din universitetsbruker. Du bruker den til å logge inn på MittUiB og e-posten din.<br><br>ID'en begynner med 3-4 bokstaver etterfulgt av 3-4 tall. F.eks.:<br><br><b>abcd1234</b> eller <b>abc123</b><br><br>Hvis du ikke vet hva ID'en din er så kan du gå på INF100-emnesiden (MittUiB) og søke opp navnet ditt under \"Personer\".",
+      "type": "text"
+    },
+    "institution": {
+      "caption": "Ved hvilken institusjon (universitet/høyskole) studerer du?",
+      "type": "options-list",
+      "options": [
+        "Universitetet i Bergen (UiB)",
+        "Universitetet i Oslo (UiO)",
+        "Norges teknisk-naturvitenskapelige universitet (NTNU)",
+        "Norges miljø- og biovitenskapelige universitet (NMBU)",
+        "Høgskolen i Østfold (HIOF)",
+        "Høgskulen på Vestlandet (HVL)",
+        "Universitetet i Stavanger (UiS)",
+        "Høyskolen Kristiania"
+      ],
+      "keys": ["UiB", "UiO", "NTNU", "NMBU", "HIOF", "HVL", "UiS", "Kristiania"]
+    },
+    "study_field": {
+      "caption": "Hva studerer du?",
+      "type": "options-list",
+      "options": [
+        "Informatikk / Datavitenskap / Informasjonsvitenskap",
+        "Matematikk / Statistikk",
+        "Fysikk",
+        "Kjemi",
+        "Biologi / Livsvitenskap / Biomedisin",
+        "Ingeniørfag (f.eks. elektro, maskin, bygg)",
+        "Medisin / Helsefag",
+        "Geofysikk",
+        "Geovitenskap",
+        "Miljøvitenskap",
+        "Økonomi",
+        "Juss",
+        "Annet"
+      ],
+      "keys": [
+        "inf",
+        "math",
+        "phys",
+        "chem",
+        "bio",
+        "eng",
+        "med",
+        "geophys",
+        "geo",
+        "env",
+        "econ",
+        "law",
+        "other"
+      ]
+    },
+    "gender": {
+      "caption": "Hvilket kjønn identifiserer du deg som?",
+      "type": "text"
+    },
+    "graduate_year": {
+      "caption": "Hvilket år fullførte du videregående?",
+      "type": "options-list",
+      "options": [
+        "2024",
+        "2023",
+        "2022",
+        "2021",
+        "2020",
+        "2019",
+        "2018",
+        "2017",
+        "2016",
+        "2015",
+        "2014",
+        "2013",
+        "2012",
+        "2010",
+        "2009",
+        "2008",
+        "2007",
+        "2006",
+        "2005",
+        "2004",
+        "2003",
+        "2002",
+        "2001",
+        "2000",
+        "Tidligere"
+      ],
+      "keys": [
+        "2024",
+        "2023",
+        "2022",
+        "2021",
+        "2020",
+        "2019",
+        "2018",
+        "2017",
+        "2016",
+        "2015",
+        "2014",
+        "2013",
+        "2012",
+        "2010",
+        "2009",
+        "2008",
+        "2007",
+        "2006",
+        "2005",
+        "2004",
+        "2003",
+        "2002",
+        "2001",
+        "2000",
+        "earlier"
+      ]
+    },
+    "math_courses": {
+      "caption": "Hvilke matematikkfag fullførte du på videregående skole?<br></br><small>Velg alle fagene du fullførte, ikke bare det mest avanserte.</small>",
+      "type": "options-multi",
+      "options": ["1P", "1T", "2P", "S1", "S2", "R1", "R2", "Annet"],
+      "keys": ["1P", "1T", "2P", "S1", "S2", "R1", "R2", "Other"]
+    },
+    "stem_courses": {
+      "caption": "Hvilke realfag fullførte du på videregående?",
+      "type": "options-multi",
+      "options": [
+        "Biologi 1",
+        "Biologi 2",
+        "Fysikk 1",
+        "Fysikk 2",
+        "Kjemi 1",
+        "Kjemi 2",
+        "Geofag 1",
+        "Geofag 2",
+        "Teknologi og forskningslære 1",
+        "Teknologi og forskningslære 2",
+        "Ingen av disse fagene"
+      ],
+      "keys": [
+        "bio1",
+        "bio2",
+        "2P",
+        "fys1",
+        "fys2",
+        "kjemi1",
+        "kjemi2",
+        "geo1",
+        "geo2",
+        "tof1",
+        "tof2",
+        "none"
+      ]
+    },
+    "prog_courses": {
+      "caption": "Fullførte du noen av disse programmeringsfagene?",
+      "type": "options-multi",
+      "options": [
+        "Informasjonsteknologi 1",
+        "Informasjonsteknologi 2",
+        "Programmering og Modellering X",
+        "Ingen av disse fagene"
+      ],
+      "keys": ["it1", "it2", "pmx", "none"]
+    },
+    "other_experience": {
+      "caption": "Har du erfaring med programmering utenfor skolen?",
+      "text": "Blokkbasert programmering inkluderer Scratch, Blockly, osv.<br/>Tekstbasert programmering inkluderer Python, Java, C, C#, C++, osv.",
+      "type": "options-multi",
+      "options": [
+        "Jeg har ingen erfaring utenfor skolen",
+        "Minst 30 timers erfaring med tekstbasert programmering",
+        "Minst 50 timers erfaring med tekstbasert programmering",
+        "Minst 100 timers erfaring med tekstbasert programmering",
+        "Mer enn 120 timers erfaring med tekstbasert programmering",
+        "Minst 30 timers erfaring med blokkbasert programmering",
+        "Minst 50 timers erfaring med blokkbasert programmering",
+        "Minst 100 timers erfaring med blokkbasert programmering",
+        "Mer enn 120 timers erfaring med blokkbasert programmering",
+        "Annen erfaring, vennligst spesifiser:"
+      ],
+      "keys": [
+        "none",
+        "text30",
+        "text50",
+        "text100",
+        "text120",
+        "block30",
+        "block50",
+        "block100",
+        "block120",
+        "other:"
+      ]
+    },
+    "uni_course": {
+      "caption": "Har du deltatt i eller fullført et programmerings-/informatikkurs i høyere utdanning før denne testen?<br></br><small>Dette inkluderer ikke kurset du tar nå.</small>",
+      "type": "options",
+      "options": [
+        "Ja, et kurs som ga 10 studiepoeng eller mer",
+        "Ja, et kurs som ga mellom 5 og 10 studiepoeng",
+        "Ja, et kurs som ga 5 studiepoeng eller mindre",
+        "Ja, men kurset ga ingen studiepoeng",
+        "Nei"
+      ],
+      "keys": ["10ECTS", "7.5ECTS", "5ECTS", "0ECTS", "no"]
+    },
+    "instructions": {
+      "caption": "",
+      "type": "plain-text",
+      "text": "Neste del inneholder programmeringsoppgaver i programmeringsspråket <b>Python</b>.<br/><br/>Hvis du tror du vet svaret, eller har en anelse om hva det kan være, ønsker vi at du svarer.<br></br><h3><b>Viktig</b></h3>Hvis du ikke aner hva svaret kan være, velg <b>\"Jeg vet ikke\"</b>. Husk at denne testen ikke er ment å evaluere deg personlig. Den er laget for å kartlegge generell programmeringskunnskap blant nye studenter, så ikke prøv deg på gjetninger. Velg heller <b>\"Jeg vet ikke\"</b>."
+    },
+    "back_button": {
+      "caption": "Viktig",
+      "type": "plain-text",
+      "text": "Denne testen har ingen tilbake-knapp. Du vil derfor ikke kunne gå tilbake til et tidligere spørsmål for å endre svaret etter å ha klikket på <b>Neste</b>."
+    }
+  }
 }

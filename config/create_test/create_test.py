@@ -23,10 +23,9 @@ if "questions" not in main_config:
 
 # Pages at beginning
 pages = [
-    {"title": "Samtykke", "content": ["consent", "consent_answer"]},
+    {"title": "Forskningsprosjekt", "content": ["research", "research_answer", "username"]},
     {"title": "Rettningslinjer", "content": ["guidelines", "own_work_declaration"]},
-    {"title": "Hva er din SIS-ID", "content": ["id"]},
-    {"title": "Hvor studerer du?", "content": ["institution", "study_field"]},
+    {"title": "Hvor studerer du?", "content": ["study_field"]},
     {"title": "Bakgrunn", "content": ["gender", "graduate_year"]},
     {"title": "Matematikkbakgrunn", "content": ["math_courses"]},
     {"title": "Realfagsbakgrunn", "content": ["stem_courses", "prog_courses", "other_experience", "uni_course"]},
