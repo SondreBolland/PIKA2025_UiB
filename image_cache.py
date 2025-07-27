@@ -4,8 +4,11 @@ from utils.code_to_image import code_to_image_bytes
 
 in_memory_images = {}
 
-def preload_images():
-    folder = 'static/code_images'
+def preload_images(root=None):
+    if root:
+        folder = f'{root}/static/code_images'
+    else:
+        folder = 'static/code_images'
     for fname in os.listdir(folder):
         if fname.endswith('.png'):
             with open(os.path.join(folder, fname), 'rb') as f:
