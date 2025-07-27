@@ -6,8 +6,8 @@ in_memory_images = {}
 
 def preload_images():
     folder = 'static/code_images'
+    print(os.listdir(folder), flush=True)
     for fname in os.listdir(folder):
-        print(fname)
         if fname.endswith('.png'):
             with open(os.path.join(folder, fname), 'rb') as f:
                 img_bytes = f.read()
