@@ -55,6 +55,7 @@ def index():
 @app.route('/enter/<name>/<group>', methods=['GET', 'POST'])
 def enter(name, group="-"):
     preload_images()
+    print(in_memory_images.keys())
     c = db.cursor()
     c.execute('SELECT id, file FROM surveys WHERE name == ?;', (name,))
     r = c.fetchone()
