@@ -252,6 +252,6 @@ if __name__ == "__main__":
 
         commands[cmd](args)
     else:
-        preload_images(root)
+        preload_images()
         app.run(debug=True)
         
