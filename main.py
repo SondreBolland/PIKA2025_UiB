@@ -1,26 +1,24 @@
 #!/usr/bin/env python3
 
 import flask
-from flask import Flask, render_template, request, redirect, url_for, abort, Response
-from werkzeug.security import generate_password_hash, check_password_hash
+from flask import Flask, render_template, request, redirect, url_for
 import os
 import sys
 import json
 import db
 import data
 import analysis_setup
-from utils.code_to_image import code_to_image_base64
+from utils.code_to_image import code_to_image_bytes
 import re
-import mail
 import session
-import threading
 import datetime
 from werkzeug.middleware.proxy_fix import ProxyFix
+from image_cache import preload_images, in_memory_images, cached_code_to_image_path
 
 from grading_utils import grade_answers, count_correct, group_answers
 
-
 root = "/uib"
+#root = ""
 app = Flask(__name__, static_url_path = root + "/static")
 app.config['APPLICATION_ROOT'] = root
 app.wsgi_app = ProxyFix(app.wsgi_app, x_prefix=1)
@@ -51,18 +49,6 @@ sh_brushes = {
 @app.route('/')
 def index():
     return render_template('index.html')
-
-# TODO: We want some other way of entering a survey...
-@app.route('/list/')
-def list():
-    c = db.cursor()
-    c.execute('SELECT id, name, file FROM surveys;')
-    avail = []
-    for r in c:
-        d = data.get_json(r[2])
-        avail.append((r[0], r[1], d['title']))
-    db.commit()
-    return render_template('list.html', avail=avail)
 
 # TODO: Maybe we want a unique ID somewhere to prevent people from submitting fake responses...
 @app.route('/enter/<name>', methods=['GET', 'POST'])
@@ -122,27 +108,6 @@ def show_done(d, answer_id):
 
     return render_template('done.html', data=d, score=score)
 
-image_cache = {}
-
-def cached_code_to_image(code_file):
-    code_file = './config/' + code_file
-    mtime = os.path.getmtime(code_file)
-
-    if code_file in image_cache:
-        cached = image_cache[code_file]
-        if cached[0] >= mtime:
-            return cached[1]
-
-    code_ext = code_file.split('.')[-1]
-    with open(code_file, 'r', encoding='utf-8') as f:
-        code_text = f.read()
-
-    # Convert to image
-    code_img_data_uri = code_to_image_base64(code_text, code_ext)
-    image_cache[code_file] = (mtime, code_img_data_uri)
-    return code_img_data_uri
-
-
 @app.route('/page/<token>', methods=['GET', 'POST'])
 def page(token):
     global sh_brushes
@@ -201,7 +166,15 @@ def page(token):
 
     if 'code' in page_data:
         code_file = page_data['code']
-        params['code_img'] = cached_code_to_image(code_file)
+        filename = os.path.basename(code_file) + '.png'
+        image_data = in_memory_images.get(filename)
+
+        if image_data:
+            params['code_img_base64'] = image_data
+        else:
+            cached_code_to_image_path(code_file, root)
+            print(f"[WARN] Image '{filename}' not found in memory.")
+            params['code_img_base64'] = None
 
     return render_template('page.html', **params)
 
@@ -254,57 +227,6 @@ def get_answer_for_question(q, q_data):
     return answer
 
 
-def send_invitations(survey, group):
-    c = db.cursor()
-    c.execute('SELECT email FROM send_to WHERE survey == ? AND identifier == ?;', (survey, group))
-    emails = [row[0] for row in c]
-    c.execute('DELETE FROM send_to WHERE survey == ? AND identifier == ?;', (survey, group))
-    db.commit()
-
-    d = data.data_for_survey(survey)
-    subject = d['email_subject']
-    mails = []
-    for addr in emails:
-        token = data.new_answers(group, survey, 0)
-        url = 'https://survey.fprg.se' + url_for('page', token=token)
-        m = mail.Mail(addr, subject, 'invitation', url=url, data=d)
-        mails.append(m)
-
-    t = threading.Thread(target=mail.send_mails, args=(mails,), name='mailer')
-    t.start()
-
-
-@app.route('/manage', methods=['GET', 'POST'])
-@app.route('/manage/', methods=['GET', 'POST'])
-def manage():
-    if 'survey' in request.form and 'group' in request.form:
-        send_invitations(int(request.form['survey']), request.form['group'])
-        return redirect(url_for('manage'))
-
-    c = db.cursor()
-    c.execute('SELECT DISTINCT send_to.survey, send_to.identifier, surveys.name FROM send_to INNER JOIN surveys ON send_to.survey == surveys.id')
-
-    groups = {}
-    ids = {}
-    for row in c:
-        survey_id = row[0]
-        group_id = row[1]
-        survey_name = row[2]
-
-        ids[survey_name] = survey_id
-        if survey_name in groups:
-            groups[survey_name].append(group_id)
-        else:
-            groups[survey_name] = [group_id]
-
-    db.commit()
-
-    for k in groups:
-        groups[k] = sorted(groups[k])
-
-    return render_template('manage.html', groups=sorted(groups.items()), ids=ids)
-
-
 if __name__ == "__main__":
     db.setup(app)
 
@@ -329,5 +251,6 @@ if __name__ == "__main__":
 
         commands[cmd](args)
     else:
+        preload_images()
         app.run(debug=True)
         

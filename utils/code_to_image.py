@@ -8,7 +8,7 @@ from pygments.lexers import get_lexer_by_name
 from pygments.formatters import ImageFormatter
 
 
-def code_to_image_base64(code_text, code_ext):
+def code_to_image_bytes(code_text, code_ext):
     try:
         lexer = get_lexer_by_name(code_ext, stripall=True)
     except:
@@ -37,21 +37,19 @@ def code_to_image_base64(code_text, code_ext):
     image = Image.open(BytesIO(img_data))
 
     # Add padding to the right side
-    extra_padding = 380  # You can adjust this
+    extra_padding = 380
     new_width = image.width + extra_padding
     new_height = image.height
 
-    # Create a new image with background color
-    background_color = "#ffffff"  # Or match your background: "#f8f8f8"
+    background_color = "#ffffff"
     padded_image = Image.new("RGB", (new_width, new_height), background_color)
-    padded_image.paste(image, (0, 0))  # Paste original image at top-left
+    padded_image.paste(image, (0, 0))
 
-    # Convert padded image to base64
-    buffered = BytesIO()
-    padded_image.save(buffered, format="PNG")
-    img_base64 = base64.b64encode(buffered.getvalue()).decode('utf-8')
+    # Return raw image bytes
+    output = BytesIO()
+    padded_image.save(output, format="PNG")
+    return output.getvalue()
 
-    return f"data:image/png;base64,{img_base64}"
 
 def get_preffered_font():
     # Try to use a good-looking cross-platform font

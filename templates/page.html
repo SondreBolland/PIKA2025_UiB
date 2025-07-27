@@ -20,9 +20,10 @@
 <pre class="brush: {{ code_brush }}">{{ code }}</pre>
 {% endif %}
 
-{% if code_img %}
-<img src="{{ code_img }}" alt="Code snippet" style="max-width: 100%; border: 1px solid #ccc;" />
+{% if code_img_base64 %}
+    <img src="{{ code_img_base64 }}" alt="Code image" style="max-width: 100%; border: 1px solid #ccc;">
 {% endif %}
+
 
 <form action="#" method="post" id="page">
 
