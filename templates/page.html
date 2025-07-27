@@ -17,11 +17,16 @@
 <h1>{{ page.title }} ({{ currpage }}/{{ numpages }})</h1>
 
 {% if code %}
-<pre class="brush: {{ code_brush }}">{{ code }}</pre>
-{% endif %}
+    <style>
+    .syntaxhighlighter, .syntaxhighlighter * {
+        user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        -moz-user-select: none;
+    }
+    </style>
 
-{% if code_img_base64 %}
-    <img src="{{ code_img_base64 }}" alt="Code image" style="max-width: 100%; border: 1px solid #ccc;">
+    <pre class="brush: {{ code_brush }}">{{ code }}</pre>
 {% endif %}
 
 

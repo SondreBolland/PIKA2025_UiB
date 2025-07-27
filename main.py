@@ -8,12 +8,10 @@ import json
 import db
 import data
 import analysis_setup
-from utils.code_to_image import code_to_image_bytes
 import re
 import session
 import datetime
 from werkzeug.middleware.proxy_fix import ProxyFix
-from image_cache import preload_images, in_memory_images, cached_code_to_image_path
 
 from grading_utils import grade_answers, count_correct, group_answers
 
@@ -53,9 +51,7 @@ def index():
 # TODO: Maybe we want a unique ID somewhere to prevent people from submitting fake responses...
 @app.route('/enter/<name>', methods=['GET', 'POST'])
 @app.route('/enter/<name>/<group>', methods=['GET', 'POST'])
-def enter(name, group="-"):
-    preload_images()
-    
+def enter(name, group="-"):    
     c = db.cursor()
     c.execute('SELECT id, file FROM surveys WHERE name == ?;', (name,))
     r = c.fetchone()
@@ -168,17 +164,12 @@ def page(token):
 
     if 'code' in page_data:
         code_file = page_data['code']
-        filename = os.path.basename(code_file) + '.png'
-        print(sorted(in_memory_images.keys()))
-        print(len(in_memory_images.keys()))
-        image_data = in_memory_images.get(filename)
+        code_ext = code_file.split('.')[-1]
 
-        if image_data:
-            params['code_img_base64'] = image_data
-        else:
-            cached_code_to_image_path(code_file, root)
-            print(f"[WARN] Image '{filename}' not found in memory.")
-            params['code_img_base64'] = None
+        with open('./config/' + code_file, 'r', encoding='utf-8') as f:
+            params['code'] = f.read()
+        params['code_js'] = sh_brushes[code_ext][1]
+        params['code_brush'] = sh_brushes[code_ext][0]
 
     return render_template('page.html', **params)
 
