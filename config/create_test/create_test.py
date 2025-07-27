@@ -23,13 +23,13 @@ if "questions" not in main_config:
 
 # Pages at beginning
 pages = [
-    #{"title": "Forskningsprosjekt", "content": ["research", "research_answer", "username"]},
-    #{"title": "Rettningslinjer", "content": ["guidelines", "own_work_declaration"]},
-    #{"title": "Hvor studerer du?", "content": ["study_field"]},
-    #{"title": "Bakgrunn", "content": ["gender", "graduate_year"]},
-    #{"title": "Matematikkbakgrunn", "content": ["math_courses"]},
-    #{"title": "Realfagsbakgrunn", "content": ["stem_courses", "prog_courses", "other_experience", "uni_course"]},
-    #{"title": "Instruksjoner", "content": ["instructions"]},
+    {"title": "Forskningsprosjekt", "content": ["research", "research_answer", "username"]},
+    {"title": "Rettningslinjer", "content": ["guidelines", "own_work_declaration"]},
+    {"title": "Hvor studerer du?", "content": ["study_field"]},
+    {"title": "Bakgrunn", "content": ["gender", "graduate_year"]},
+    {"title": "Matematikkbakgrunn", "content": ["math_courses"]},
+    {"title": "Realfagsbakgrunn", "content": ["stem_courses", "prog_courses", "other_experience", "uni_course"]},
+    {"title": "Instruksjoner", "content": ["instructions"]},
     {"title": "Ingen tilbake-knapp", "content": ["back_button"]}
 ]
 
