@@ -168,6 +168,7 @@ def page(token):
         code_file = page_data['code']
         filename = os.path.basename(code_file) + '.png'
         image_data = in_memory_images.get(filename)
+        print(in_memory_images, flush=True)
 
         if image_data:
             params['code_img_base64'] = image_data
