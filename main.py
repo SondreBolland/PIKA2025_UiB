@@ -54,6 +54,8 @@ def index():
 @app.route('/enter/<name>', methods=['GET', 'POST'])
 @app.route('/enter/<name>/<group>', methods=['GET', 'POST'])
 def enter(name, group="-"):
+    print("kake", flush=True)
+    preload_images()
     c = db.cursor()
     c.execute('SELECT id, file FROM surveys WHERE name == ?;', (name,))
     r = c.fetchone()
@@ -252,7 +254,5 @@ if __name__ == "__main__":
 
         commands[cmd](args)
     else:
-        print("kake", flush=True)
-        preload_images()
         app.run(debug=True)
         
