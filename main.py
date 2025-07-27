@@ -252,6 +252,7 @@ if __name__ == "__main__":
 
         commands[cmd](args)
     else:
+        print("kake", flush=True)
         preload_images()
         app.run(debug=True)
         
