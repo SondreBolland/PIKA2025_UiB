@@ -55,8 +55,7 @@ def index():
 @app.route('/enter/<name>/<group>', methods=['GET', 'POST'])
 def enter(name, group="-"):
     preload_images()
-    print(in_memory_images.keys())
-    print(len(in_memory_images.keys()))
+    
     c = db.cursor()
     c.execute('SELECT id, file FROM surveys WHERE name == ?;', (name,))
     r = c.fetchone()
@@ -170,6 +169,8 @@ def page(token):
     if 'code' in page_data:
         code_file = page_data['code']
         filename = os.path.basename(code_file) + '.png'
+        print(sorted(in_memory_images.keys()))
+        print(len(in_memory_images.keys()))
         image_data = in_memory_images.get(filename)
 
         if image_data:
