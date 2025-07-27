@@ -255,5 +255,5 @@ if __name__ == "__main__":
 
         commands[cmd](args)
     else:
-        app.run(debug=True)
+        app.run(debug=False)
         
