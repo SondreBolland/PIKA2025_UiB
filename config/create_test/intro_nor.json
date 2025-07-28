@@ -120,7 +120,7 @@
     "username": {
       "caption": "",
       "type": "plain-text",
-      "text": "Dette er brukernavnet du har fått for din universitetsbruker. Du bruker den til å logge inn på MittUiB og e-posten din. Brukernavnet begynner med 3-4 bokstaver etterfulgt av 3-4 tall. F.eks.:<br><b>abcd1234</b> eller <b>abc123</b><br>Hvis du ikke vet hva ID'en din er så kan du gå på INF100-emnesiden (MittUiB) og søke opp navnet ditt under \"Personer\"."
+      "text": "Dette er brukernavnet du har fått for din universitetsbruker. Du bruker den til å logge inn på MittUiB og e-posten din. Brukernavnet begynner med 3-4 bokstaver etterfulgt av 3-4 tall. F.eks.:<br><b>abcd1234</b> eller <b>abc123</b><br>Hvis du ikke vet hva brukernavnet ditt er så kan du gå på INF100-emnesiden (MittUiB) og søke opp navnet ditt under \"Personer\"."
     },
     "guidelines": {
       "caption": "",
