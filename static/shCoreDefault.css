@@ -327,3 +327,8 @@
 .syntaxhighlighter .keyword {
   font-weight: bold !important;
 }
+
+.syntaxhighlighter,
+.syntaxhighlighter code {
+  font-size: 22px !important;
+}

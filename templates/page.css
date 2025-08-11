@@ -1,0 +1,40 @@
+/* Global form/input styling */
+form {
+    padding: 1em;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="range"],
+textarea,
+select {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+    padding: 0.5em;
+    margin-top: 0.5em;
+}
+
+/* For buttons */
+input[type="button"].big {
+    width: 100%;
+    padding: 1em;
+    font-size: 1.2rem;
+}
+
+/* Make label blocks stack on smaller screens */
+label {
+    display: block;
+    margin-bottom: 1em;
+}
+
+/* Optional: Responsive layout for very small screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    .qtitle {
+        font-size: 1.1rem;
+    }
+}

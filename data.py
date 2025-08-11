@@ -90,6 +90,7 @@ class Answer:
         self.answer = answer
         self.data = None
         self.prefix = ""
+        self.no_answer = "Nan"
         if data is not None:
             self.types = data['value_types']
             if question_id in data['questions']:
@@ -117,7 +118,7 @@ class Answer:
             return self.prefix + self.answer
 
         if self.answer is None:
-            return self.prefix + "-"
+            return self.prefix + self.no_answer
 
         if self.data['type'] == "value":
             type, val = self.answer.split(':', maxsplit=1)
@@ -132,7 +133,7 @@ class Answer:
 
     def __repr__(self):
         if self.answer is None:
-            return "-"
+            return self.no_answer
         return self.answer
 
 

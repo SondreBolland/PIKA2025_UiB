@@ -80,7 +80,7 @@ for topic_key, topic in rubric.items():
         # Use custom matching function
         match = student_answers.apply(lambda x: answers_match(correct, x))
 
-        idk_mask = student_answers.isin(["-", "i don't know", "jeg vet ikke"])
+        idk_mask = student_answers.isin(["Nan", "i don't know", "jeg vet ikke"])
 
         # Assign points
         result_df[question + "_points"] = match.astype(int) * topic_score
