@@ -194,6 +194,7 @@
       "caption": "Hvilket år fullførte du videregående?",
       "type": "options-list",
       "options": [
+        "2025",
         "2024",
         "2023",
         "2022",
@@ -221,6 +222,7 @@
         "Tidligere"
       ],
       "keys": [
+        "2025",
         "2024",
         "2023",
         "2022",
